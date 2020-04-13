@@ -12,7 +12,7 @@ export class MessagesController {
     }
 
     @Get('/:id')
-    findOne(@Param('id') id): string {
+    findOne(@Param('id') id: string): string {
         return 'This API returns a message with id = ' + id + '!';
     }
 

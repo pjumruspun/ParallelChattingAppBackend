@@ -1294,8 +1294,8 @@
         "signature": "e172c1504e41084564d146347430069dc8fdf075cda42a94dcb36635086f7131"
       },
       "../src/messages/messages.controller.ts": {
-        "version": "ab3a7e588ec2b96ef84bc62ececb0f4ac15bd7047863fb99311584905749b640",
-        "signature": "2c01cd9f2867364808f1afd3f6e8bde356d26a868fed75c4b57e626cb71f36f9"
+        "version": "5759d2be62052344778cbe56f5e9cade2f867c136e86bf79079d1651e61e9648",
+        "signature": "c1b0002958480a7428c1ff4aa92617441095e430217ebe037aeace2fb0fbf2c8"
       },
       "../src/messages/messages.schema.ts": {
         "version": "dd9e391378060979a96eff9968dca82343685a664fd1812e3f6b1cfddffd29f8",
@@ -8476,14 +8476,12 @@
       "../node_modules/@nestjs/swagger/dist/utils/index.d.ts",
       "../node_modules/@nestjs/swagger/dist/index.d.ts",
       "../node_modules/@nestjs/swagger/index.d.ts",
+      "../src/messages/dto/create-message.dto.ts",
       "../src/messages/messages.service.ts",
-      "../src/messages/messages.controller.ts",
       "../src/messages/messages.schema.ts",
       "../src/database/database.providers.ts",
       "../src/database/database.module.ts",
       "../src/messages/message.providers.ts",
-      "../src/messages/messages.module.ts",
-      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -8567,7 +8565,9 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/messages/dto/create-message.dto.ts"
+      "../src/messages/messages.controller.ts",
+      "../src/app.module.ts",
+      "../src/messages/messages.module.ts"
     ]
   },
   "version": "3.8.3"
