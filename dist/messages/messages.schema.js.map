@@ -1,1 +1,1 @@
-{"version":3,"file":"messages.schema.js","sourceRoot":"","sources":["../../src/messages/messages.schema.ts"],"names":[],"mappings":";;AAAA,qCAAqC;AAExB,QAAA,aAAa,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IAC7C,OAAO,EAAE,MAAM;IACf,SAAS,EAAE,IAAI;IACf,IAAI,EAAE,OAAO;CAChB,CAAC,CAAC"}
+{"version":3,"file":"messages.schema.js","sourceRoot":"","sources":["../../src/messages/messages.schema.ts"],"names":[],"mappings":";;AAAA,qCAAqC;AAExB,QAAA,aAAa,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IAC7C,OAAO,EAAE,MAAM;IACf,SAAS,EAAE,IAAI;CAClB,CAAC,CAAC"}

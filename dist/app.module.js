@@ -11,6 +11,7 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const messages_module_1 = require("./messages/messages.module");
 const mongoose_1 = require("@nestjs/mongoose");
+const clients_module_1 = require("./clients/clients.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -18,6 +19,7 @@ AppModule = __decorate([
         imports: [
             messages_module_1.MessagesModule,
             mongoose_1.MongooseModule.forRoot('mongodb://localhost/nest'),
+            clients_module_1.ClientsModule,
         ],
         controllers: [app_controller_1.AppController,],
         providers: [app_service_1.AppService,],

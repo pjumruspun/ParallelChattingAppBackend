@@ -7,14 +7,18 @@ import { MessagesModule } from './messages/messages.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Message } from './messages/interfaces/message.interface';
 import { DatabaseModule } from './database/database.module';
+import { ClientsController } from './clients/clients.controller';
+import { ClientsService } from './clients/clients.service';
+import { ClientsModule } from './clients/clients.module';
 
 @Module({
     imports: [
         MessagesModule,
         MongooseModule.forRoot('mongodb://localhost/nest'),
+        ClientsModule,
         //DatabaseModule,
   ],
-  controllers: [AppController, ],
-  providers: [AppService, ],
+  controllers: [AppController,],
+  providers: [AppService,],
 })
 export class AppModule {}

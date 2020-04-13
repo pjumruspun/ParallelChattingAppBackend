@@ -1,9 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateMessageDto {
+export class CreateClientDto {
     @ApiProperty()
-    content: String;
+    name: String;
 
     @ApiProperty()
-    timestamp: Date;
+    group: [ String ];
 }
