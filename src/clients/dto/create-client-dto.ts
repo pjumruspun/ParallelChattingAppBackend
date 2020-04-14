@@ -5,5 +5,7 @@ export class CreateClientDto {
     name: String;
 
     @ApiProperty()
-    group: [ String ];
+    group: [ 
+        String
+    ];
 }

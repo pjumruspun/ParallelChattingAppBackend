@@ -20,5 +20,13 @@ __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Date)
 ], CreateMessageDto.prototype, "timestamp", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Object)
+], CreateMessageDto.prototype, "sender", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", String)
+], CreateMessageDto.prototype, "group", void 0);
 exports.CreateMessageDto = CreateMessageDto;
 //# sourceMappingURL=create-message.dto.js.map

@@ -1102,8 +1102,8 @@
         "signature": "da7470dc7c44576723af32806b8b8acd24fe989841071e57ba143e2564a851ba"
       },
       "../src/messages/interfaces/message.interface.ts": {
-        "version": "ad06e29c0ee61ed3aa267b075d3c2a19974b91883056a937dceef48067724ed4",
-        "signature": "ba77f3e0d24769f2c8d218c3ead9aefb42f4613200f4058deef912d0a5740fe2"
+        "version": "b167433696e381dfd71631c89f4dad64466054819a47ecfa0673fd3cdf9bd0d4",
+        "signature": "07ff6b2950a363b1054c7d852e03a9d7b2076d1efae8d80f308e3aa05db5abe7"
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
         "version": "6ecc423e71318bafbd230e6059e082c377170dfc7e02fccfa600586f8604d452",
@@ -1246,8 +1246,8 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/messages/dto/create-message.dto.ts": {
-        "version": "5bd02e3e15977d531be0b5e2d6bd9ef13ab4d0bb5f948fd26d19fd36d8eea677",
-        "signature": "e813dd53dcc34a3c2f6e3c3134808b83215a033a178e93c2c1742e9e3b5d4dfd"
+        "version": "3949cf388a7cdfcc12d531d1bb2676100bce3139f60648bc5cde424a5afb9bea",
+        "signature": "26cb8b058ab9e9a26684e2a9c7ef00b96fbbd7e9cf9540bd4775ed917e403669"
       },
       "../src/messages/messages.service.ts": {
         "version": "d0b9be1dcf8f860ffc6e916fedfc1c7fc142cd2cf475d715844dc47877bb356f",
@@ -1298,7 +1298,7 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/messages/messages.schema.ts": {
-        "version": "e84a926a5f8edc61b97f19e13871725cd5d756ada775d54741498c1b8d91b55e",
+        "version": "34b4267bcb377022558b1edbd1737081b3dd9e98f5717e9dfd836512aa6d0658",
         "signature": "dd152ca9d4b942754d4bedf116c60393c537732df2368bc43245527c6bbf38df"
       },
       "../src/database/database.providers.ts": {
@@ -1318,11 +1318,11 @@
         "signature": "84857f33808fe263d9e213a6326cd2a31c39408b40d0cd62f8fef691186194aa"
       },
       "../src/clients/interface/client.interface.ts": {
-        "version": "5794a92f18b8c60b90fc76ce5ef420dcdf99f916a36b74720c163a48967005d2",
+        "version": "fa4163d354b8cdd75b00dacecd5deee67b15aab89f6a599c42448254f2d996b6",
         "signature": "6bebe633a0ef0c4f56b6969d35c2379912dc5bcd0ae9c3889a638853b90b78cc"
       },
       "../src/clients/dto/create-client-dto.ts": {
-        "version": "ea72846ec70a49325264ce40564bf1638041b76886b41e3050fcedc3052b7bc6",
+        "version": "5be4c2bfe7a57165b95879450e15eb2c4ffa57b0489741bc084eeb6f8f07e703",
         "signature": "dfe8068caffc0d66b18619823a515a367ae13b1b8715ce344c971263159e28e4"
       },
       "../src/clients/clients.service.ts": {
@@ -1334,7 +1334,7 @@
         "signature": "7ef4a7b324e6eb9e8958e94c5adf07fb4013e88ceb8864b73ac63f810b220903"
       },
       "../src/clients/clients.schema.ts": {
-        "version": "6dbe97e11b3039cc28521b82a8624665f279e9b1daec7cfe51c128e7d7daf3f3",
+        "version": "f0bcda7b2245482331ea69d8790eb6beba741df090bc58b4aacbbceae5f74ade",
         "signature": "4aa0d2f369170cc5ee6edadc43057d44d14abee31a57a507683e7f10ef66538a"
       },
       "../src/clients/client.providers.ts": {
@@ -4164,6 +4164,7 @@
       ],
       "../src/messages/dto/create-message.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7499,6 +7500,9 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/messages/dto/create-message.dto.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
       "../src/messages/messages.service.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../src/messages/interfaces/message.interface.ts",
@@ -7594,6 +7598,25 @@
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/messages/message.providers.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/clients/interface/client.interface.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/clients/clients.service.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../src/clients/interface/client.interface.ts",
+        "../src/clients/dto/create-client-dto.ts"
+      ],
+      "../src/clients/clients.controller.ts": [
+        "../src/clients/clients.service.ts",
+        "../src/clients/interface/client.interface.ts",
+        "../src/clients/dto/create-client-dto.ts"
+      ],
+      "../src/clients/clients.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/clients/client.providers.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
@@ -8243,25 +8266,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/clients/interface/client.interface.ts": [
-        "../node_modules/@types/mongoose/index.d.ts"
-      ],
-      "../src/clients/clients.controller.ts": [
-        "../src/clients/clients.service.ts",
-        "../src/clients/interface/client.interface.ts",
-        "../src/clients/dto/create-client-dto.ts"
-      ],
-      "../src/clients/clients.service.ts": [
-        "../node_modules/@types/mongoose/index.d.ts",
-        "../src/clients/interface/client.interface.ts",
-        "../src/clients/dto/create-client-dto.ts"
-      ],
-      "../src/clients/clients.schema.ts": [
-        "../node_modules/@types/mongoose/index.d.ts"
-      ],
-      "../src/clients/client.providers.ts": [
-        "../node_modules/@types/mongoose/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -8577,6 +8581,7 @@
       "../node_modules/@nestjs/swagger/dist/index.d.ts",
       "../node_modules/@nestjs/swagger/index.d.ts",
       "../src/messages/dto/create-message.dto.ts",
+      "../src/messages/messages.service.ts",
       "../src/messages/messages.controller.ts",
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts",
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.utils.d.ts",
@@ -8592,6 +8597,14 @@
       "../src/database/database.providers.ts",
       "../src/database/database.module.ts",
       "../src/messages/message.providers.ts",
+      "../src/messages/messages.module.ts",
+      "../src/clients/interface/client.interface.ts",
+      "../src/clients/dto/create-client-dto.ts",
+      "../src/clients/clients.service.ts",
+      "../src/clients/clients.controller.ts",
+      "../src/clients/client.providers.ts",
+      "../src/clients/clients.module.ts",
+      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -8628,6 +8641,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
+      "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
@@ -8674,17 +8688,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/messages/messages.service.ts",
-      "../src/messages/messages.module.ts",
-      "../src/clients/interface/client.interface.ts",
-      "../src/clients/clients.service.ts",
-      "../src/clients/dto/create-client-dto.ts",
-      "../src/clients/clients.schema.ts",
-      "../src/clients/client.providers.ts",
-      "../src/clients/clients.controller.ts",
-      "../src/clients/clients.module.ts",
-      "../src/app.module.ts",
-      "../src/main.ts"
+      "../src/clients/clients.schema.ts"
     ]
   },
   "version": "3.8.3"
