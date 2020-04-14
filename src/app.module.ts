@@ -10,12 +10,15 @@ import { DatabaseModule } from './database/database.module';
 import { ClientsController } from './clients/clients.controller';
 import { ClientsService } from './clients/clients.service';
 import { ClientsModule } from './clients/clients.module';
+import { GroupsService } from './groups/groups.service';
+import { GroupsModule } from './groups/groups.module';
 
 @Module({
     imports: [
         MessagesModule,
         MongooseModule.forRoot('mongodb://localhost/nest'),
         ClientsModule,
+        GroupsModule,
         //DatabaseModule,
   ],
   controllers: [AppController,],

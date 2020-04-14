@@ -1318,12 +1318,12 @@
         "signature": "84857f33808fe263d9e213a6326cd2a31c39408b40d0cd62f8fef691186194aa"
       },
       "../src/clients/interface/client.interface.ts": {
-        "version": "fa4163d354b8cdd75b00dacecd5deee67b15aab89f6a599c42448254f2d996b6",
-        "signature": "6bebe633a0ef0c4f56b6969d35c2379912dc5bcd0ae9c3889a638853b90b78cc"
+        "version": "76e5f56c65798d74fec462c55ac525b00a2dcf78344554054428a1da0bc45afe",
+        "signature": "fe4650ec955b28388ef21991944878d1044b315c590214fd910b08206f1a66fb"
       },
       "../src/clients/dto/create-client-dto.ts": {
-        "version": "5be4c2bfe7a57165b95879450e15eb2c4ffa57b0489741bc084eeb6f8f07e703",
-        "signature": "dfe8068caffc0d66b18619823a515a367ae13b1b8715ce344c971263159e28e4"
+        "version": "ad27a5450789eed1b58af121a96bf4642d11ba3722c87d34f90345c86baac59f",
+        "signature": "d941cf071c9d5187ac45dd425f32dedb8356e744dc1765a696391153856d72a4"
       },
       "../src/clients/clients.service.ts": {
         "version": "29225722aaf4ce3611e58e22edcc5019159274c6be1c6983d24aeabc14e727d8",
@@ -1334,7 +1334,7 @@
         "signature": "7ef4a7b324e6eb9e8958e94c5adf07fb4013e88ceb8864b73ac63f810b220903"
       },
       "../src/clients/clients.schema.ts": {
-        "version": "f0bcda7b2245482331ea69d8790eb6beba741df090bc58b4aacbbceae5f74ade",
+        "version": "fc70df2b56d9dda7eb97111220ab92301e2d4bfa90169a9e6e5cb6cb04957d6a",
         "signature": "4aa0d2f369170cc5ee6edadc43057d44d14abee31a57a507683e7f10ef66538a"
       },
       "../src/clients/client.providers.ts": {
@@ -1345,8 +1345,36 @@
         "version": "938e6c5003b4a82164bb866eb7091efde7090914af0017faab5cb5374b282a1a",
         "signature": "6372cdebbee1094fcd3fb2e8fc9cfea02cd09a8f8a0ba3f63055fe8c1c7c7c1b"
       },
+      "../src/groups/interfaces/group.interface.ts": {
+        "version": "705c9197d4db9c5d460cc1515d80e83ab63147c6fd8bed281fffd8b3ffafec74",
+        "signature": "9583e11a5d98c053a0268b89f7070dde2dfb3af7289ae54c58a8a4d08d1c0b15"
+      },
+      "../src/groups/dto/create-group.dto.ts": {
+        "version": "2e8fd59fa7113e7e0e10010e6665c4fb42d7355a5f7f6fc1847dce909e443530",
+        "signature": "9287265b611e3ebada6f3764eaadccc3b9e2bd1abbc863bd1c70c7d401acbdb9"
+      },
+      "../src/groups/groups.service.ts": {
+        "version": "fd26ae337045c4903646efebc7d65205c22919c87e3f54ed06bd32895e30aed0",
+        "signature": "7e9797953dc469d3da9a96e6e3438f349937af4ddb67d5687d5221f48e2fecc6"
+      },
+      "../src/groups/groups.controller.ts": {
+        "version": "42073c86dc010b09cf92d995cf92a25aea52bedd72ecd7b81d163575e09a2fda",
+        "signature": "f0814bfc9f05dcb6f5b6540e8f5e43907f87f17dac1a65dd028f774754571876"
+      },
+      "../src/groups/groups.schema.ts": {
+        "version": "76f57d3fd03f698ec60ef4684909a8eec653a3cf72611109f919d40a48c5d407",
+        "signature": "ebc020dc970e295924c202a27777a723d55534d5d1182418d6552551c0fe3150"
+      },
+      "../src/groups/group.providers.ts": {
+        "version": "144f2f3c38ddec2e2e9213d9d7538fa2510ab832d4221f42b50d8d519990cb5a",
+        "signature": "ceb4af7b59cdb6389531339a9072c37898dfc2e9e4a8cff1d40db6e1f80a221b"
+      },
+      "../src/groups/groups.module.ts": {
+        "version": "e60ddd661d8a894bdb7bdbd045f4f51cf764e4a9b17c89960c930463f5df3465",
+        "signature": "d106e07d9ef47341ec29468fe47d6accf1bac86d80c2be06a5f637960126c1c5"
+      },
       "../src/app.module.ts": {
-        "version": "1905ecac474e7fff3b9b028fd11889798e3d31f608beeae9e8844f90c36f637a",
+        "version": "6d5be117172223eeb2af5d5e68dcb6c85b27ed14336b04f89d9005e667a0d597",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -4320,6 +4348,7 @@
       ],
       "../src/clients/dto/create-client-dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4373,6 +4402,69 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/groups/interfaces/group.interface.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/groups/dto/create-group.dto.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/groups/groups.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../src/groups/interfaces/group.interface.ts",
+        "../src/groups/dto/create-group.dto.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/groups/groups.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/groups/groups.service.ts",
+        "../src/groups/interfaces/group.interface.ts",
+        "../src/groups/dto/create-group.dto.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/groups/groups.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/groups/group.providers.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../src/groups/groups.schema.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/groups/groups.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/groups/groups.controller.ts",
+        "../src/groups/groups.service.ts",
+        "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../src/groups/groups.schema.ts",
+        "../src/database/database.module.ts",
+        "../src/groups/group.providers.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
@@ -4386,6 +4478,8 @@
         "../src/clients/clients.controller.ts",
         "../src/clients/clients.service.ts",
         "../src/clients/clients.module.ts",
+        "../src/groups/groups.service.ts",
+        "../src/groups/groups.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7603,6 +7697,9 @@
       "../src/clients/interface/client.interface.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
+      "../src/clients/dto/create-client-dto.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
       "../src/clients/clients.service.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../src/clients/interface/client.interface.ts",
@@ -7617,6 +7714,28 @@
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/clients/client.providers.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/groups/interfaces/group.interface.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/groups/dto/create-group.dto.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/groups/groups.service.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../src/groups/interfaces/group.interface.ts",
+        "../src/groups/dto/create-group.dto.ts"
+      ],
+      "../src/groups/groups.controller.ts": [
+        "../src/groups/groups.service.ts",
+        "../src/groups/interfaces/group.interface.ts",
+        "../src/groups/dto/create-group.dto.ts"
+      ],
+      "../src/groups/groups.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/groups/group.providers.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
@@ -8598,12 +8717,19 @@
       "../src/database/database.module.ts",
       "../src/messages/message.providers.ts",
       "../src/messages/messages.module.ts",
-      "../src/clients/interface/client.interface.ts",
       "../src/clients/dto/create-client-dto.ts",
       "../src/clients/clients.service.ts",
       "../src/clients/clients.controller.ts",
+      "../src/clients/clients.schema.ts",
       "../src/clients/client.providers.ts",
       "../src/clients/clients.module.ts",
+      "../src/groups/interfaces/group.interface.ts",
+      "../src/groups/dto/create-group.dto.ts",
+      "../src/groups/groups.service.ts",
+      "../src/groups/groups.controller.ts",
+      "../src/groups/groups.schema.ts",
+      "../src/groups/group.providers.ts",
+      "../src/groups/groups.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -8688,7 +8814,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/clients/clients.schema.ts"
+      "../src/clients/interface/client.interface.ts"
     ]
   },
   "version": "3.8.3"
