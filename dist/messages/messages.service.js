@@ -25,6 +25,11 @@ let MessagesService = class MessagesService {
     findAll() {
         return this.messageModel.find().exec();
     }
+    hasMessage(id) {
+        var found = this.messageModel.findById(id) == null;
+        console.log(found);
+        return found;
+    }
 };
 MessagesService = __decorate([
     common_1.Injectable(),

@@ -6,4 +6,5 @@ export declare class ClientsService {
     constructor(clientModel: Model<Client>);
     create(createClientDto: CreateClientDto): Promise<Client>;
     findAll(): Promise<Client[]>;
+    hasClient(id: String): boolean;
 }

@@ -5,11 +5,12 @@ import { CreateGroupDto } from './dto/create-group.dto';
 import { UpdateGroupDto } from './dto/update-group.dto'
 import { ApiTags } from '@nestjs/swagger';
 import { Types } from 'mongoose';
+import { ClientsService } from 'src/clients/clients.service';
 
 @ApiTags('Groups')
 @Controller('groups')
 export class GroupsController {
-    constructor(private groupsService: GroupsService) {}
+    constructor(private groupsService: GroupsService, private clientsService: ClientsService) {}
     @Get()
     async findAll(): Promise<Group[]> {
         return this.groupsService.findAll();
@@ -29,10 +30,15 @@ export class GroupsController {
     async addmember(@Param('groupid') groupid: String, @Param('memberid') memberid: String){
         var updateGroupDto: any
         updateGroupDto = await this.groupsService.findOne(groupid);
-        updateGroupDto.client.push(new Types.ObjectId(String(memberid)));
+        if(this.clientsService.hasClient(memberid)){
+            updateGroupDto.client.push(new Types.ObjectId(String(memberid)));
+            await this.groupsService.addMember(groupid, updateGroupDto);
+            return updateGroupDto;
+        }
+        else
+            return "Invalid member id";
         // console.log(updateGroupDto);
-        await this.groupsService.addMember(groupid, updateGroupDto);
-        return updateGroupDto;
+        
     }
 
     @Delete('/:id')

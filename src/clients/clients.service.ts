@@ -18,5 +18,10 @@ export class ClientsService {
         return this.clientModel.find().exec();
     }
 
-    
+    hasClient(id: String){
+        var found = this.clientModel.findOne({ _id: id }) != null;
+        
+        console.log(found);
+        return found;
+    }
 }

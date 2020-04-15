@@ -1250,8 +1250,8 @@
         "signature": "11f0097f4be48ea39d053a7a1a9f0719544ab553178372709e833ffb77c86391"
       },
       "../src/messages/messages.service.ts": {
-        "version": "d0b9be1dcf8f860ffc6e916fedfc1c7fc142cd2cf475d715844dc47877bb356f",
-        "signature": "e172c1504e41084564d146347430069dc8fdf075cda42a94dcb36635086f7131"
+        "version": "a90d0b10918766daeaa430e5f6068be182881cc85e6ffb2f68b1a0ed68258a71",
+        "signature": "bbabad8ef767b2e98c3bf2ad233fee1d648b4a2386edca4b5b9f231c49734017"
       },
       "../src/messages/messages.controller.ts": {
         "version": "acacf3141b12ec22903a690b738369bfe511806ec0973f4a8be0559745bddd7a",
@@ -1326,8 +1326,8 @@
         "signature": "13ddbd11b00884c8d2aae9cc5b4252c64bf35f5fc73e8a42efaa24674daf2bf5"
       },
       "../src/clients/clients.service.ts": {
-        "version": "29225722aaf4ce3611e58e22edcc5019159274c6be1c6983d24aeabc14e727d8",
-        "signature": "c98c68d391b55136a746eb78ff6c4a964cc9476d59bc60f2dd6d6fcd9f191724"
+        "version": "dd0d5520740ea80eedde33e4deec42d0cdf285a541b01bc0c9bae01625899116",
+        "signature": "e4e3ef6bea9fc31387fdcd302d459cba48b8350080f223f0997cb3cf077d2419"
       },
       "../src/clients/clients.controller.ts": {
         "version": "17af1c4d30b903e2512cf1353f80f47a2318301284236aee670b0e2bbc718038",
@@ -1346,8 +1346,8 @@
         "signature": "6372cdebbee1094fcd3fb2e8fc9cfea02cd09a8f8a0ba3f63055fe8c1c7c7c1b"
       },
       "../src/groups/interfaces/group.interface.ts": {
-        "version": "f9bdd86cba52f347a09e32545a92a992fdd6dcf96b53dfe6d8c00a9180054e9d",
-        "signature": "7f3f026b4d36e626fb78be729bfcc019b5d9737ff2c6e63b1912342958efbc6e"
+        "version": "81f75830fe52384caea753c2262372891c3631d5498962169f047f49fa609648",
+        "signature": "0c8f7ef4fdf8fcb6a0c03b810a084112e6c66124f3ae3ca6852207866134038a"
       },
       "../src/groups/dto/create-group.dto.ts": {
         "version": "1c593e5cb5d2c0162ff59b29c797bf9fcd88b29b95ab68bd4f2dc4ed11df07fd",
@@ -1362,8 +1362,8 @@
         "signature": "adbf294931f1db09fb75cae1707490f7f8921d75b8dc2fd6ae269caae4ea9363"
       },
       "../src/groups/groups.controller.ts": {
-        "version": "fb7a79b9ed2fc4fdb3a66dd2cd6a97fff4179323439613a3ec58bffb0e6646b4",
-        "signature": "fbb60fe22ca9140681a78d6ae196fc41acc5fb4eeeef4ee72d564654d5c2a29c"
+        "version": "2c6f2ec01a5cf7282ab1ea95b9f88bb84b220f22fedd3f5adb88d182fb890fa3",
+        "signature": "689afaef1c783d4d2a08da7060afcfc41c22a7cc099c95290f8f0e0ae2e9d53f"
       },
       "../src/groups/groups.schema.ts": {
         "version": "ed6f8546286a6f5e6c6f6058676a25db5f627c0ba401f5c51ec7fb6d50e70405",
@@ -1374,7 +1374,7 @@
         "signature": "ceb4af7b59cdb6389531339a9072c37898dfc2e9e4a8cff1d40db6e1f80a221b"
       },
       "../src/groups/groups.module.ts": {
-        "version": "e60ddd661d8a894bdb7bdbd045f4f51cf764e4a9b17c89960c930463f5df3465",
+        "version": "ab9e9ebc48ea78b84dde25a82f47d5e2dc4d540a8d5445c15f00b40f3bd505f1",
         "signature": "d106e07d9ef47341ec29468fe47d6accf1bac86d80c2be06a5f637960126c1c5"
       },
       "../src/app.module.ts": {
@@ -4452,6 +4452,7 @@
         "../src/groups/dto/update-group.dto.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
+        "../src/clients/clients.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4480,6 +4481,7 @@
         "../src/groups/groups.schema.ts",
         "../src/database/database.module.ts",
         "../src/groups/group.providers.ts",
+        "../src/clients/clients.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7753,6 +7755,7 @@
       ],
       "../src/groups/groups.controller.ts": [
         "../src/groups/groups.service.ts",
+        "../src/clients/clients.service.ts",
         "../src/groups/interfaces/group.interface.ts",
         "../src/groups/dto/create-group.dto.ts"
       ],
@@ -8743,7 +8746,6 @@
       "../src/messages/messages.module.ts",
       "../src/clients/interface/client.interface.ts",
       "../src/clients/dto/create-client-dto.ts",
-      "../src/clients/clients.service.ts",
       "../src/clients/clients.controller.ts",
       "../src/clients/clients.schema.ts",
       "../src/clients/client.providers.ts",
@@ -8752,8 +8754,10 @@
       "../src/groups/dto/create-group.dto.ts",
       "../src/groups/dto/update-group.dto.ts",
       "../src/groups/groups.service.ts",
+      "../src/groups/groups.controller.ts",
       "../src/groups/groups.schema.ts",
       "../src/groups/group.providers.ts",
+      "../src/groups/groups.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -8838,8 +8842,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/groups/groups.controller.ts",
-      "../src/groups/groups.module.ts"
+      "../src/clients/clients.service.ts"
     ]
   },
   "version": "3.8.3"

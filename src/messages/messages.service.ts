@@ -18,5 +18,9 @@ export class MessagesService {
         return this.messageModel.find().exec();
     }
 
-    
+    hasMessage(id: String) {
+        var found: boolean = this.messageModel.findById(id) == null;
+        console.log(found);
+        return found;
+    }
 }

@@ -17,9 +17,11 @@ const groups_service_1 = require("./groups.service");
 const create_group_dto_1 = require("./dto/create-group.dto");
 const swagger_1 = require("@nestjs/swagger");
 const mongoose_1 = require("mongoose");
+const clients_service_1 = require("../clients/clients.service");
 let GroupsController = class GroupsController {
-    constructor(groupsService) {
+    constructor(groupsService, clientsService) {
         this.groupsService = groupsService;
+        this.clientsService = clientsService;
     }
     async findAll() {
         return this.groupsService.findAll();
@@ -33,9 +35,13 @@ let GroupsController = class GroupsController {
     async addmember(groupid, memberid) {
         var updateGroupDto;
         updateGroupDto = await this.groupsService.findOne(groupid);
-        updateGroupDto.client.push(new mongoose_1.Types.ObjectId(String(memberid)));
-        await this.groupsService.addMember(groupid, updateGroupDto);
-        return updateGroupDto;
+        if (this.clientsService.hasClient(memberid)) {
+            updateGroupDto.client.push(new mongoose_1.Types.ObjectId(String(memberid)));
+            await this.groupsService.addMember(groupid, updateGroupDto);
+            return updateGroupDto;
+        }
+        else
+            return "Invalid member id";
     }
     async delete(id) {
         return this.groupsService.deleteById(id);
@@ -78,7 +84,7 @@ __decorate([
 GroupsController = __decorate([
     swagger_1.ApiTags('Groups'),
     common_1.Controller('groups'),
-    __metadata("design:paramtypes", [groups_service_1.GroupsService])
+    __metadata("design:paramtypes", [groups_service_1.GroupsService, clients_service_1.ClientsService])
 ], GroupsController);
 exports.GroupsController = GroupsController;
 //# sourceMappingURL=groups.controller.js.map

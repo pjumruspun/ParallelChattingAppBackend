@@ -25,6 +25,11 @@ let ClientsService = class ClientsService {
     findAll() {
         return this.clientModel.find().exec();
     }
+    hasClient(id) {
+        var found = this.clientModel.findOne({ _id: id }) != null;
+        console.log(found);
+        return found;
+    }
 };
 ClientsService = __decorate([
     common_1.Injectable(),

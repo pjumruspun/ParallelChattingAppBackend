@@ -6,4 +6,5 @@ export declare class MessagesService {
     constructor(messageModel: Model<Message>);
     create(createMessageDto: CreateMessageDto): Promise<Message>;
     findAll(): Promise<Message[]>;
+    hasMessage(id: String): boolean;
 }
