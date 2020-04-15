@@ -9,7 +9,9 @@ async function bootstrap() {
         .setTitle('Parallel Project 2020')
         .setDescription('API Swagger for parallel project')
         .setVersion('1.0')
-        .addTag('Hello')
+        .addTag('Clients')
+        .addTag('Groups')
+        .addTag('Messages')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, options);
     swagger_1.SwaggerModule.setup('api', app, document);

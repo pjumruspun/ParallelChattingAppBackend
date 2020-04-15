@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const clients_service_1 = require("./clients.service");
 const create_client_dto_1 = require("./dto/create-client-dto");
+const swagger_1 = require("@nestjs/swagger");
 let ClientsController = class ClientsController {
     constructor(clientsService) {
         this.clientsService = clientsService;
@@ -44,12 +45,14 @@ __decorate([
 ], ClientsController.prototype, "findOne", null);
 __decorate([
     common_1.Post(),
+    swagger_1.ApiBody({ type: create_client_dto_1.CreateClientDto }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_client_dto_1.CreateClientDto]),
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "create", null);
 ClientsController = __decorate([
+    swagger_1.ApiTags('Clients'),
     common_1.Controller('clients'),
     __metadata("design:paramtypes", [clients_service_1.ClientsService])
 ], ClientsController);

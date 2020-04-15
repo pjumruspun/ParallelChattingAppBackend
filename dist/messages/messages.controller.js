@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const messages_service_1 = require("./messages.service");
 const create_message_dto_1 = require("./dto/create-message.dto");
+const swagger_1 = require("@nestjs/swagger");
 let MessagesController = class MessagesController {
     constructor(messagesService) {
         this.messagesService = messagesService;
@@ -50,6 +51,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], MessagesController.prototype, "create", null);
 MessagesController = __decorate([
+    swagger_1.ApiTags('Messages'),
     common_1.Controller('messages'),
     __metadata("design:paramtypes", [messages_service_1.MessagesService])
 ], MessagesController);

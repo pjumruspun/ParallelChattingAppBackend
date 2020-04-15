@@ -10,6 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const swagger_1 = require("@nestjs/swagger");
+class GroupComplexObj {
+}
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Object)
+], GroupComplexObj.prototype, "group_id", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Object)
+], GroupComplexObj.prototype, "last_message_id", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Boolean)
+], GroupComplexObj.prototype, "join", void 0);
+;
 class CreateClientDto {
 }
 __decorate([
@@ -17,7 +32,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateClientDto.prototype, "name", void 0);
 __decorate([
-    swagger_1.ApiProperty(),
+    swagger_1.ApiProperty({ type: GroupComplexObj }),
     __metadata("design:type", Array)
 ], CreateClientDto.prototype, "group", void 0);
 exports.CreateClientDto = CreateClientDto;

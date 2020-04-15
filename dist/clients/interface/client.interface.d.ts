@@ -10,5 +10,6 @@ export interface Client extends Document {
             type: Schema.Types.ObjectId;
             ref: 'Message';
         };
+        join: Boolean;
     }];
 }

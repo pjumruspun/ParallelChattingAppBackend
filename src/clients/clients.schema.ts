@@ -11,7 +11,8 @@ export const ClientSchema = new mongoose.Schema({
             last_message_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Message',
-            }
+            },
+            join: Boolean
         }
     ]
 });

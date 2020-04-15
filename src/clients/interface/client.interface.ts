@@ -11,7 +11,8 @@ export interface Client extends Document {
             last_message_id: {
                 type: Schema.Types.ObjectId,
                 ref: 'Message',
-            }
+            },
+            join: Boolean,
         }
     ];
 }

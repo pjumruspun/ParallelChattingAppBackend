@@ -1,14 +1,17 @@
 import { Schema } from 'mongoose';
-export declare class CreateClientDto {
-    name: String;
-    group: [{
-        group_id: {
-            type: Schema.Types.ObjectId;
-            ref: 'Group';
-        };
-        last_message_id: {
-            type: Schema.Types.ObjectId;
-            ref: 'Message';
-        };
-    }];
+declare class GroupComplexObj {
+    readonly group_id: {
+        type: Schema.Types.ObjectId;
+        ref: 'Group';
+    };
+    readonly last_message_id: {
+        type: Schema.Types.ObjectId;
+        ref: 'Message';
+    };
+    readonly join: Boolean;
 }
+export declare class CreateClientDto {
+    readonly name: String;
+    readonly group: [GroupComplexObj];
+}
+export {};

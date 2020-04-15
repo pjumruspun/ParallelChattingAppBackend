@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const groups_service_1 = require("./groups.service");
 const create_group_dto_1 = require("./dto/create-group.dto");
+const swagger_1 = require("@nestjs/swagger");
 let GroupsController = class GroupsController {
     constructor(groupsService) {
         this.groupsService = groupsService;
@@ -50,6 +51,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "create", null);
 GroupsController = __decorate([
+    swagger_1.ApiTags('Groups'),
     common_1.Controller('groups'),
     __metadata("design:paramtypes", [groups_service_1.GroupsService])
 ], GroupsController);
