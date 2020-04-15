@@ -11,5 +11,6 @@ export declare class ClientsController {
     create(createClientDto: CreateClientDto): Promise<void>;
     addmember(memberid: String, groupid: String): Promise<any>;
     removemember(memberid: String, groupid: String): Promise<any>;
+    setjoinstatus(memberid: String, groupid: String, bool: Boolean): Promise<any>;
     delete(id: String): Promise<Client>;
 }

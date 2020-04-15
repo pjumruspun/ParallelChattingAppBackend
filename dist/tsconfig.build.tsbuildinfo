@@ -1346,8 +1346,8 @@
         "signature": "8469c207138d3da254872e567fc512bc480f92bddd0a2d28a5807912109d74fa"
       },
       "../src/clients/clients.controller.ts": {
-        "version": "82ae2b2996306b03300ef274f459400b42d3c533f62c1de21e959d4f923acb87",
-        "signature": "9593db6d80c806a7eb9206c8a78798db54bad2200df9a65f94333ab72f504d55"
+        "version": "de4d6e717cf0f616c40d6ba4867a938eb04a00d90ba006d87875ffbef15cd071",
+        "signature": "0aa53f7cc0315dacc5d8631a86e4abe296f79718a1dfc070fff4afed562a0e4e"
       },
       "../src/clients/clients.schema.ts": {
         "version": "ef804a7bbe16f261e6565da569f8f553d57ac8eca88289abb17f2030e52b7b29",

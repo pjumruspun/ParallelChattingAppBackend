@@ -65,10 +65,35 @@ export class ClientsController {
 
             if(true){
                 for(var i = 0; i < createClientDto.group.length; ++i){
-                    console.log(createClientDto.group[i].group_id)
+                    // console.log(createClientDto.group[i].group_id)
                     if(createClientDto.group[i].group_id == groupid){
                         createClientDto.group.splice(i, 1);
                         --i;
+                    }
+                }
+                // console.log(createClientDto);
+                await this.clientsService.update(memberid, createClientDto);
+                return createClientDto;
+            }
+            else{
+                return "Duplicate group id"; // Doesn't work for now
+            }
+        }
+        else
+            return "Invalid group id";
+        // console.log(updateGroupDto);
+    }
+
+    @Put('/setjoinstatus/:memberid/:groupid/:bool')
+    async setjoinstatus(@Param('memberid') memberid: String, @Param('groupid') groupid: String, @Param('bool') bool: Boolean){
+        var createClientDto: any = []
+        createClientDto = await this.clientsService.findOne(memberid);
+        if(this.groupService.hasGroup(groupid)){
+            if(true){
+                for(var i = 0; i < createClientDto.group.length; ++i){
+                    console.log(createClientDto.group[i].group_id)
+                    if(createClientDto.group[i].group_id == groupid){
+                        createClientDto.group[i].join = bool;
                     }
                 }
                 // console.log(createClientDto);

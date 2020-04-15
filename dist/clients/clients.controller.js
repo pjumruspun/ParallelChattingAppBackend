@@ -64,10 +64,30 @@ let ClientsController = class ClientsController {
             };
             if (true) {
                 for (var i = 0; i < createClientDto.group.length; ++i) {
-                    console.log(createClientDto.group[i].group_id);
                     if (createClientDto.group[i].group_id == groupid) {
                         createClientDto.group.splice(i, 1);
                         --i;
+                    }
+                }
+                await this.clientsService.update(memberid, createClientDto);
+                return createClientDto;
+            }
+            else {
+                return "Duplicate group id";
+            }
+        }
+        else
+            return "Invalid group id";
+    }
+    async setjoinstatus(memberid, groupid, bool) {
+        var createClientDto = [];
+        createClientDto = await this.clientsService.findOne(memberid);
+        if (this.groupService.hasGroup(groupid)) {
+            if (true) {
+                for (var i = 0; i < createClientDto.group.length; ++i) {
+                    console.log(createClientDto.group[i].group_id);
+                    if (createClientDto.group[i].group_id == groupid) {
+                        createClientDto.group[i].join = bool;
                     }
                 }
                 await this.clientsService.update(memberid, createClientDto);
@@ -119,6 +139,13 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "removemember", null);
+__decorate([
+    common_1.Put('/setjoinstatus/:memberid/:groupid/:bool'),
+    __param(0, common_1.Param('memberid')), __param(1, common_1.Param('groupid')), __param(2, common_1.Param('bool')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String, Boolean]),
+    __metadata("design:returntype", Promise)
+], ClientsController.prototype, "setjoinstatus", null);
 __decorate([
     common_1.Delete('/:id'),
     __param(0, common_1.Param('id')),
