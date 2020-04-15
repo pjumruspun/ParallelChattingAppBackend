@@ -25,9 +25,17 @@ let ClientsService = class ClientsService {
     findAll() {
         return this.clientModel.find().exec();
     }
+    findOne(id) {
+        return this.clientModel.findById(id);
+    }
+    update(id, createClientDto) {
+        return this.clientModel.findByIdAndUpdate(id, createClientDto);
+    }
+    deleteById(id) {
+        return this.clientModel.findByIdAndDelete(id);
+    }
     hasClient(id) {
         var found = this.clientModel.findOne({ _id: id }) != null;
-        console.log(found);
         return found;
     }
 };

@@ -32,7 +32,7 @@ export class GroupsController {
         updateGroupDto = await this.groupsService.findOne(groupid);
         if(this.clientsService.hasClient(memberid)){
             var member: Types.ObjectId = new Types.ObjectId(String(memberid))
-            console.log(updateGroupDto.client.indexOf(member));
+            // console.log(updateGroupDto.client.indexOf(member));
             if(updateGroupDto.client.indexOf(member) == -1)
             {
                 updateGroupDto.client.push(member);
@@ -53,7 +53,7 @@ export class GroupsController {
         updateGroupDto = await this.groupsService.findOne(groupid);
         if(this.clientsService.hasClient(memberid)){
             var member: Types.ObjectId = new Types.ObjectId(String(memberid))
-            console.log(updateGroupDto.client.indexOf(member));
+            // console.log(updateGroupDto.client.indexOf(member));
             if(updateGroupDto.client.indexOf(member) != -1)
             {
                 updateGroupDto.client.remove(member);

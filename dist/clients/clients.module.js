@@ -13,6 +13,7 @@ const mongoose_1 = require("@nestjs/mongoose");
 const clients_schema_1 = require("./clients.schema");
 const database_module_1 = require("../database/database.module");
 const client_providers_1 = require("./client.providers");
+const groups_module_1 = require("../groups/groups.module");
 let ClientsModule = class ClientsModule {
 };
 ClientsModule = __decorate([
@@ -20,6 +21,7 @@ ClientsModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: 'Client', schema: clients_schema_1.ClientSchema }]),
             database_module_1.DatabaseModule,
+            common_1.forwardRef(() => groups_module_1.GroupsModule)
         ],
         controllers: [clients_controller_1.ClientsController],
         providers: [

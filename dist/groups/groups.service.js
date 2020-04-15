@@ -34,6 +34,10 @@ let GroupsService = class GroupsService {
     async deleteById(id) {
         return this.groupModel.findByIdAndRemove(id);
     }
+    hasGroup(id) {
+        var found = this.groupModel.findOne({ _id: id }) != null;
+        return found;
+    }
 };
 GroupsService = __decorate([
     common_1.Injectable(),

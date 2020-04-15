@@ -1,15 +1,15 @@
 import { ApiProperty, } from '@nestjs/swagger';
-import { Schema } from 'mongoose';
+import { Types } from 'mongoose';
 
 class GroupComplexObj  {
     @ApiProperty()
     readonly group_id: {
-        type: Schema.Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'Group',
     };
     @ApiProperty()
     readonly last_message_id: {
-        type: Schema.Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'Message',
     };
     @ApiProperty()

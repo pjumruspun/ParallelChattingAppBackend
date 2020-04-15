@@ -37,7 +37,6 @@ let GroupsController = class GroupsController {
         updateGroupDto = await this.groupsService.findOne(groupid);
         if (this.clientsService.hasClient(memberid)) {
             var member = new mongoose_1.Types.ObjectId(String(memberid));
-            console.log(updateGroupDto.client.indexOf(member));
             if (updateGroupDto.client.indexOf(member) == -1) {
                 updateGroupDto.client.push(member);
                 await this.groupsService.update(groupid, updateGroupDto);
@@ -54,7 +53,6 @@ let GroupsController = class GroupsController {
         updateGroupDto = await this.groupsService.findOne(groupid);
         if (this.clientsService.hasClient(memberid)) {
             var member = new mongoose_1.Types.ObjectId(String(memberid));
-            console.log(updateGroupDto.client.indexOf(member));
             if (updateGroupDto.client.indexOf(member) != -1) {
                 updateGroupDto.client.remove(member);
                 await this.groupsService.update(groupid, updateGroupDto);

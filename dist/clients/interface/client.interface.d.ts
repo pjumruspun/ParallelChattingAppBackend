@@ -1,13 +1,13 @@
-import { Document, Schema } from 'mongoose';
+import { Document, Types } from 'mongoose';
 export interface Client extends Document {
     readonly name: String;
     readonly group: [{
         group_id: {
-            type: Schema.Types.ObjectId;
+            type: Types.ObjectId;
             ref: 'Group';
         };
         last_message_id: {
-            type: Schema.Types.ObjectId;
+            type: Types.ObjectId;
             ref: 'Message';
         };
         join: Boolean;

@@ -21,7 +21,7 @@ GroupsModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: 'Group', schema: groups_schema_1.GroupSchema }]),
             database_module_1.DatabaseModule,
-            clients_module_1.ClientsModule,
+            common_1.forwardRef(() => clients_module_1.ClientsModule)
         ],
         controllers: [groups_controller_1.GroupsController],
         providers: [

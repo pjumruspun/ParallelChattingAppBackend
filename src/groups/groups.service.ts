@@ -30,5 +30,11 @@ export class GroupsService {
     async deleteById(id: String): Promise<Group> {
         return this.groupModel.findByIdAndRemove(id);
     }
+
+    hasGroup(id: String){
+        var found = this.groupModel.findOne({ _id: id }) != null;
+        // console.log(found);
+        return found;
+    }
     
 }

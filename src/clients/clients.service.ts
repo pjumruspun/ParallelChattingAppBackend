@@ -18,10 +18,21 @@ export class ClientsService {
         return this.clientModel.find().exec();
     }
 
+    findOne(id: String){
+        return this.clientModel.findById(id);
+    }
+
+    update(id: String, createClientDto: CreateClientDto) {
+        return this.clientModel.findByIdAndUpdate(id, createClientDto);
+    }
+
+    deleteById(id: String) {
+        return this.clientModel.findByIdAndDelete(id);
+    }
+
     hasClient(id: String){
         var found = this.clientModel.findOne({ _id: id }) != null;
-        
-        console.log(found);
+        // console.log(found);
         return found;
     }
 }
