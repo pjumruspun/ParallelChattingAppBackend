@@ -28,17 +28,44 @@ export class GroupsController {
 
     @Put('/:groupid/client/add/:memberid')
     async addmember(@Param('groupid') groupid: String, @Param('memberid') memberid: String){
-        var updateGroupDto: any
+        var updateGroupDto: any = []
         updateGroupDto = await this.groupsService.findOne(groupid);
         if(this.clientsService.hasClient(memberid)){
-            updateGroupDto.client.push(new Types.ObjectId(String(memberid)));
-            await this.groupsService.addMember(groupid, updateGroupDto);
-            return updateGroupDto;
+            var member: Types.ObjectId = new Types.ObjectId(String(memberid))
+            console.log(updateGroupDto.client.indexOf(member));
+            if(updateGroupDto.client.indexOf(member) == -1)
+            {
+                updateGroupDto.client.push(member);
+                await this.groupsService.update(groupid, updateGroupDto);
+                return updateGroupDto;
+            }
+            else return "Duplicate member id"
+            
         }
         else
             return "Invalid member id";
         // console.log(updateGroupDto);
-        
+    }
+
+    @Put('/:groupid/client/remove/:memberid')
+    async removemember(@Param('groupid') groupid: String, @Param('memberid') memberid: String){
+        var updateGroupDto: any = []
+        updateGroupDto = await this.groupsService.findOne(groupid);
+        if(this.clientsService.hasClient(memberid)){
+            var member: Types.ObjectId = new Types.ObjectId(String(memberid))
+            console.log(updateGroupDto.client.indexOf(member));
+            if(updateGroupDto.client.indexOf(member) != -1)
+            {
+                updateGroupDto.client.remove(member);
+                await this.groupsService.update(groupid, updateGroupDto);
+                return updateGroupDto;
+            }
+            else return "No member id in group"
+            
+        }
+        else
+            return "Invalid member id";
+        // console.log(updateGroupDto);
     }
 
     @Delete('/:id')

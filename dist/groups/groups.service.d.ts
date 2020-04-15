@@ -8,6 +8,6 @@ export declare class GroupsService {
     create(createGroupDto: CreateGroupDto): Promise<Group>;
     findAll(): Promise<Group[]>;
     findOne(id: String): Promise<Group>;
-    addMember(id: String, updateGroupDto: UpdateGroupDto): Promise<Group>;
+    update(id: String, updateGroupDto: UpdateGroupDto): Promise<Group>;
     deleteById(id: String): Promise<Group>;
 }

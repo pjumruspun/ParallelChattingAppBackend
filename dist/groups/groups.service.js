@@ -28,7 +28,7 @@ let GroupsService = class GroupsService {
     async findOne(id) {
         return this.groupModel.findById(id);
     }
-    async addMember(id, updateGroupDto) {
+    async update(id, updateGroupDto) {
         return await this.groupModel.findByIdAndUpdate(id, updateGroupDto);
     }
     async deleteById(id) {

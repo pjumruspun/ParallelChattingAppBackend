@@ -23,7 +23,7 @@ export class GroupsService {
         return this.groupModel.findById(id);
     }
 
-    async addMember(id: String, updateGroupDto: UpdateGroupDto){
+    async update(id: String, updateGroupDto: UpdateGroupDto){
         return await this.groupModel.findByIdAndUpdate(id, updateGroupDto);
     }
 

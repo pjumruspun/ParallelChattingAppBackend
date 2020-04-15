@@ -10,5 +10,6 @@ export declare class GroupsController {
     findOne(id: string): Promise<Group>;
     create(createGroupDto: CreateGroupDto): Promise<Group>;
     addmember(groupid: String, memberid: String): Promise<any>;
+    removemember(groupid: String, memberid: String): Promise<any>;
     delete(id: String): Promise<Group>;
 }

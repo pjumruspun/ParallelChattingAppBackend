@@ -33,12 +33,35 @@ let GroupsController = class GroupsController {
         return this.groupsService.create(createGroupDto);
     }
     async addmember(groupid, memberid) {
-        var updateGroupDto;
+        var updateGroupDto = [];
         updateGroupDto = await this.groupsService.findOne(groupid);
         if (this.clientsService.hasClient(memberid)) {
-            updateGroupDto.client.push(new mongoose_1.Types.ObjectId(String(memberid)));
-            await this.groupsService.addMember(groupid, updateGroupDto);
-            return updateGroupDto;
+            var member = new mongoose_1.Types.ObjectId(String(memberid));
+            console.log(updateGroupDto.client.indexOf(member));
+            if (updateGroupDto.client.indexOf(member) == -1) {
+                updateGroupDto.client.push(member);
+                await this.groupsService.update(groupid, updateGroupDto);
+                return updateGroupDto;
+            }
+            else
+                return "Duplicate member id";
+        }
+        else
+            return "Invalid member id";
+    }
+    async removemember(groupid, memberid) {
+        var updateGroupDto = [];
+        updateGroupDto = await this.groupsService.findOne(groupid);
+        if (this.clientsService.hasClient(memberid)) {
+            var member = new mongoose_1.Types.ObjectId(String(memberid));
+            console.log(updateGroupDto.client.indexOf(member));
+            if (updateGroupDto.client.indexOf(member) != -1) {
+                updateGroupDto.client.remove(member);
+                await this.groupsService.update(groupid, updateGroupDto);
+                return updateGroupDto;
+            }
+            else
+                return "No member id in group";
         }
         else
             return "Invalid member id";
@@ -74,6 +97,13 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "addmember", null);
+__decorate([
+    common_1.Put('/:groupid/client/remove/:memberid'),
+    __param(0, common_1.Param('groupid')), __param(1, common_1.Param('memberid')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], GroupsController.prototype, "removemember", null);
 __decorate([
     common_1.Delete('/:id'),
     __param(0, common_1.Param('id')),

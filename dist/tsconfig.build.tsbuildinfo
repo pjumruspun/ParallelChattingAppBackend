@@ -1358,12 +1358,12 @@
         "signature": "18b31c284206d0f414a034a88bfb7053dd2505c47ad84495b7d660498db3e054"
       },
       "../src/groups/groups.service.ts": {
-        "version": "aeb17fff8cd8249c0f28e0842c6c8e385dbacc860a4b723b387ba183a94811b2",
-        "signature": "adbf294931f1db09fb75cae1707490f7f8921d75b8dc2fd6ae269caae4ea9363"
+        "version": "d0cee76662b89b8207c3b5b0cacdd593a59aa8a2a2b87fc7da97d9ea9f88dea0",
+        "signature": "18908703adae07ebd15336101c971ff27b3e770ea9ad1b073134bf004de6015a"
       },
       "../src/groups/groups.controller.ts": {
-        "version": "2c6f2ec01a5cf7282ab1ea95b9f88bb84b220f22fedd3f5adb88d182fb890fa3",
-        "signature": "689afaef1c783d4d2a08da7060afcfc41c22a7cc099c95290f8f0e0ae2e9d53f"
+        "version": "2681b61890bd2c2ed1d1856a9eff95bf850cfc3c9c39a25ffd6d8355615e9b04",
+        "signature": "c208b8addb46b16cc044fcf5190ca1e812093a94e329a1075ae89862247d79e5"
       },
       "../src/groups/groups.schema.ts": {
         "version": "ed6f8546286a6f5e6c6f6058676a25db5f627c0ba401f5c51ec7fb6d50e70405",
@@ -8746,6 +8746,7 @@
       "../src/messages/messages.module.ts",
       "../src/clients/interface/client.interface.ts",
       "../src/clients/dto/create-client-dto.ts",
+      "../src/clients/clients.service.ts",
       "../src/clients/clients.controller.ts",
       "../src/clients/clients.schema.ts",
       "../src/clients/client.providers.ts",
@@ -8754,10 +8755,8 @@
       "../src/groups/dto/create-group.dto.ts",
       "../src/groups/dto/update-group.dto.ts",
       "../src/groups/groups.service.ts",
-      "../src/groups/groups.controller.ts",
       "../src/groups/groups.schema.ts",
       "../src/groups/group.providers.ts",
-      "../src/groups/groups.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -8842,7 +8841,8 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/clients/clients.service.ts"
+      "../src/groups/groups.controller.ts",
+      "../src/groups/groups.module.ts"
     ]
   },
   "version": "3.8.3"
