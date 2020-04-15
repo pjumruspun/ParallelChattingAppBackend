@@ -7,5 +7,8 @@ export interface Message extends Document {
         type: Schema.Types.ObjectId;
         ref: 'Client';
     };
-    readonly group: String;
+    readonly group: {
+        type: Schema.Types.ObjectId;
+        ref: 'Group';
+    };
 }

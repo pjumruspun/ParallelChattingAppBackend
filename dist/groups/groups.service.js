@@ -22,8 +22,17 @@ let GroupsService = class GroupsService {
         const createdGroup = new this.groupModel(createGroupDto);
         return createdGroup.save();
     }
-    findAll() {
+    async findAll() {
         return this.groupModel.find().exec();
+    }
+    async findOne(id) {
+        return this.groupModel.findById(id);
+    }
+    async addMember(id, updateGroupDto) {
+        return await this.groupModel.findByIdAndUpdate(id, updateGroupDto);
+    }
+    async deleteById(id) {
+        return this.groupModel.findByIdAndRemove(id);
     }
 };
 GroupsService = __decorate([

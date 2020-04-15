@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Schema, Types }  from 'mongoose';
 import { Optional } from '@nestjs/common';
 
-export class CreateGroupDto {
+export class UpdateGroupDto {
     @ApiProperty()
     name: String;
 

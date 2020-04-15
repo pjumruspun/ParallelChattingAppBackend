@@ -9,6 +9,9 @@ exports.MessageSchema = new mongoose.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Client'
     },
-    group: String,
+    group: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: 'Group'
+    },
 });
 //# sourceMappingURL=messages.schema.js.map

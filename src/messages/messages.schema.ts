@@ -8,5 +8,8 @@ export const MessageSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Client'
     },
-    group: String,
+    group: {
+        type: Schema.Types.ObjectId,
+        ref: 'Group'
+    },
 });

@@ -10,23 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const swagger_1 = require("@nestjs/swagger");
-class CreateMessageDto {
+class UpdateGroupDto {
 }
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)
-], CreateMessageDto.prototype, "content", void 0);
+], UpdateGroupDto.prototype, "name", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Date)
-], CreateMessageDto.prototype, "timestamp", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", Object)
-], CreateMessageDto.prototype, "sender", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", Object)
-], CreateMessageDto.prototype, "group", void 0);
-exports.CreateMessageDto = CreateMessageDto;
-//# sourceMappingURL=create-message.dto.js.map
+    __metadata("design:type", Array)
+], UpdateGroupDto.prototype, "client", void 0);
+exports.UpdateGroupDto = UpdateGroupDto;
+//# sourceMappingURL=update-group.dto.js.map

@@ -15,5 +15,8 @@ export class CreateMessageDto {
     };
 
     @ApiProperty()
-    group: String;
+    group: {
+        type: Schema.Types.ObjectId,
+        ref: 'Group'
+    };
 }

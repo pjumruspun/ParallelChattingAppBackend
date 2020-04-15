@@ -1,7 +1,8 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { Model } from 'mongoose';
+import { Model, Schema, Mongoose, Types } from 'mongoose';
 import { Group } from './interfaces/group.interface';
 import { CreateGroupDto } from './dto/create-group.dto';
+import { UpdateGroupDto } from './dto/update-group.dto';
 
 @Injectable()
 export class GroupsService {
@@ -14,9 +15,20 @@ export class GroupsService {
         return createdGroup.save();
     }
 
-    findAll() {
+    async findAll() {
         return this.groupModel.find().exec();
     }
 
+    async findOne(id: String) {
+        return this.groupModel.findById(id);
+    }
+
+    async addMember(id: String, updateGroupDto: UpdateGroupDto){
+        return await this.groupModel.findByIdAndUpdate(id, updateGroupDto);
+    }
+
+    async deleteById(id: String): Promise<Group> {
+        return this.groupModel.findByIdAndRemove(id);
+    }
     
 }

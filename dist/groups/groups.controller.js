@@ -16,6 +16,7 @@ const common_1 = require("@nestjs/common");
 const groups_service_1 = require("./groups.service");
 const create_group_dto_1 = require("./dto/create-group.dto");
 const swagger_1 = require("@nestjs/swagger");
+const mongoose_1 = require("mongoose");
 let GroupsController = class GroupsController {
     constructor(groupsService) {
         this.groupsService = groupsService;
@@ -24,10 +25,20 @@ let GroupsController = class GroupsController {
         return this.groupsService.findAll();
     }
     findOne(id) {
-        return 'This API returns a group with id = ' + id + '!';
+        return this.groupsService.findOne(id);
     }
     async create(createGroupDto) {
-        this.groupsService.create(createGroupDto);
+        return this.groupsService.create(createGroupDto);
+    }
+    async addmember(groupid, memberid) {
+        var updateGroupDto;
+        updateGroupDto = await this.groupsService.findOne(groupid);
+        updateGroupDto.client.push(new mongoose_1.Types.ObjectId(String(memberid)));
+        await this.groupsService.addMember(groupid, updateGroupDto);
+        return updateGroupDto;
+    }
+    async delete(id) {
+        return this.groupsService.deleteById(id);
     }
 };
 __decorate([
@@ -41,7 +52,7 @@ __decorate([
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "findOne", null);
 __decorate([
     common_1.Post(),
@@ -50,6 +61,20 @@ __decorate([
     __metadata("design:paramtypes", [create_group_dto_1.CreateGroupDto]),
     __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "create", null);
+__decorate([
+    common_1.Put('/:groupid/client/add/:memberid'),
+    __param(0, common_1.Param('groupid')), __param(1, common_1.Param('memberid')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], GroupsController.prototype, "addmember", null);
+__decorate([
+    common_1.Delete('/:id'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], GroupsController.prototype, "delete", null);
 GroupsController = __decorate([
     swagger_1.ApiTags('Groups'),
     common_1.Controller('groups'),

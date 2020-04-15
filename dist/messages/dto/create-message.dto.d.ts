@@ -6,5 +6,8 @@ export declare class CreateMessageDto {
         type: Schema.Types.ObjectId;
         ref: 'Client';
     };
-    group: String;
+    group: {
+        type: Schema.Types.ObjectId;
+        ref: 'Group';
+    };
 }

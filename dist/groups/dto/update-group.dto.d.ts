@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-export declare class CreateGroupDto {
+export declare class UpdateGroupDto {
     name: String;
     client: [{
         type: Types.ObjectId;

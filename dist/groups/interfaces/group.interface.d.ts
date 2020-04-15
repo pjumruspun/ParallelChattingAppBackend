@@ -1,9 +1,9 @@
 import { Document } from 'mongoose';
-import { Schema } from 'mongoose';
+import { Types } from 'mongoose';
 export interface Group extends Document {
-    readonly name: String;
-    readonly client: [{
-        type: Schema.Types.ObjectId;
+    name: String;
+    client: [{
+        _id: Types.ObjectId;
         ref: 'Client';
     }];
 }
