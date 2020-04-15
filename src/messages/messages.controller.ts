@@ -29,5 +29,4 @@ export class MessagesController {
     async update(@Param('id')id: String, @Body() updateMessageDto: CreateMessageDto) {
         return await this.messagesService.update(id, updateMessageDto);
     }
-
 }

@@ -1254,7 +1254,7 @@
         "signature": "bbe7d3cc4c30cd23154b6b5f1943423c3c959d140cada42c7f67be6e4c7a5f85"
       },
       "../src/messages/messages.controller.ts": {
-        "version": "6ff677397127066ad0a3a0f2958a6b3b7d4cfedeb251a74dbd71581be44b81be",
+        "version": "51b0baec37105254ee1afa68e8a04e1f51f81d456f68788af46fcf7962eae0d9",
         "signature": "3bd32ad01638965fed77f77734da87bfceec928c6f0b9c64bb2de2cabf439cc3"
       },
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts": {
@@ -1346,7 +1346,7 @@
         "signature": "8469c207138d3da254872e567fc512bc480f92bddd0a2d28a5807912109d74fa"
       },
       "../src/clients/clients.controller.ts": {
-        "version": "5f0cb4ed415b149eb3fc3ed48207baf3c5ddf7b1605844a3cad0833fb60abe52",
+        "version": "0a5c9d046a230fdd06cfe16e879153952bd7ade72054c544090aa20ed5a2085d",
         "signature": "ff3ffdbade82f025d69ef750d834209a6826625dd8f760ba86c400d1a9b57a9e"
       },
       "../src/clients/clients.schema.ts": {
@@ -8743,6 +8743,7 @@
       "../node_modules/@nestjs/mongoose/dist/mongoose.module.d.ts",
       "../node_modules/@nestjs/mongoose/dist/index.d.ts",
       "../node_modules/@nestjs/mongoose/index.d.ts",
+      "../src/messages/messages.schema.ts",
       "../src/database/database.providers.ts",
       "../src/database/database.module.ts",
       "../src/messages/message.providers.ts",
@@ -8754,7 +8755,6 @@
       "../src/groups/dto/create-group.dto.ts",
       "../src/groups/dto/update-group.dto.ts",
       "../src/groups/groups.service.ts",
-      "../src/clients/clients.controller.ts",
       "../src/clients/clients.schema.ts",
       "../src/clients/client.providers.ts",
       "../src/groups/groups.controller.ts",
@@ -8846,7 +8846,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/messages/messages.schema.ts"
+      "../src/clients/clients.controller.ts"
     ]
   },
   "version": "3.8.3"

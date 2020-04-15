@@ -44,7 +44,16 @@ export class ClientsController {
             }
 
             if(true){
-                createClientDto.group.push(group)
+                var dupe: Boolean = false;
+                for(var i = 0; i < createClientDto.group.length; ++i){
+                    console.log(createClientDto.group[i].group_id)
+                    if(createClientDto.group[i].group_id == groupid){
+                        dupe = true;
+                        console.log("FOUND DUPE");
+                    }
+                }
+                if(!dupe) createClientDto.group.push(group)
+                else return "Duplicate group id";
                 // console.log(createClientDto);
                 await this.clientsService.update(memberid, createClientDto);
                 return createClientDto;
