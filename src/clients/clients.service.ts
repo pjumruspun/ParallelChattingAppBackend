@@ -11,27 +11,29 @@ export class ClientsService {
 
     async create(createClientDto: CreateClientDto): Promise<Client> {
         const createdClient = new this.clientModel(createClientDto);
-        return createdClient.save();
+        return await createdClient.save();
     }
 
-    findAll() {
-        return this.clientModel.find().exec();
+    async findAll() {
+        return await this.clientModel.find().exec ();
     }
 
-    findOne(id: String){
-        return this.clientModel.findById(id);
+    async findOne(id: String){
+        return await this.clientModel.findById(id);
     }
 
-    update(id: String, createClientDto: CreateClientDto) {
-        return this.clientModel.findByIdAndUpdate(id, createClientDto);
+    async update(id: String, createClientDto: CreateClientDto) {
+        await this.clientModel.findByIdAndUpdate(id, createClientDto);
+        return await this.clientModel.findById(id);
+        
     }
 
-    deleteById(id: String) {
-        return this.clientModel.findByIdAndDelete(id);
+    async deleteById(id: String) {
+        return await this.clientModel.findByIdAndDelete(id);
     }
 
-    hasClient(id: String){
-        var found = this.clientModel.findOne({ _id: id }) != null;
+    async hasClient(id: String){
+        var found = await this.clientModel.findOne({ _id: id }) != null;
         // console.log(found);
         return found;
     }

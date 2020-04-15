@@ -23,7 +23,13 @@ export class ClientsController {
     @Post()
     @ApiBody({ type: CreateClientDto })
     async create(@Body() createClientDto: CreateClientDto) {
-        this.clientsService.create(createClientDto);
+        return await this.clientsService.create(createClientDto);
+    }
+
+    @Put('/:id')
+    @ApiBody({ type: CreateClientDto })
+    async update(@Param('id') id: String, @Body() updateClientDto: CreateClientDto){
+        return await this.clientsService.update(id, updateClientDto);
     }
 
     @Put('/:memberid/group/add/:groupid')
@@ -94,6 +100,31 @@ export class ClientsController {
                     console.log(createClientDto.group[i].group_id)
                     if(createClientDto.group[i].group_id == groupid){
                         createClientDto.group[i].join = bool;
+                    }
+                }
+                // console.log(createClientDto);
+                await this.clientsService.update(memberid, createClientDto);
+                return createClientDto;
+            }
+            else{
+                return "Duplicate group id"; // Doesn't work for now
+            }
+        }
+        else
+            return "Invalid group id";
+        // console.log(updateGroupDto);
+    }
+
+    @Put('/setlastmsg/:memberid/:groupid/:messageid')
+    async setlastmsg(@Param('memberid') memberid: String, @Param('groupid') groupid: String, @Param('messageid') messageid: String){
+        var createClientDto: any = []
+        createClientDto = await this.clientsService.findOne(memberid);
+        if(this.groupService.hasGroup(groupid)){
+            if(true){
+                for(var i = 0; i < createClientDto.group.length; ++i){
+                    console.log(createClientDto.group[i].group_id)
+                    if(createClientDto.group[i].group_id == groupid){
+                        createClientDto.group[i].last_message_id = messageid;
                     }
                 }
                 // console.log(createClientDto);

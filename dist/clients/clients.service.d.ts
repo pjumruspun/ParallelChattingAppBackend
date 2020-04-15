@@ -6,8 +6,8 @@ export declare class ClientsService {
     constructor(clientModel: Model<Client>);
     create(createClientDto: CreateClientDto): Promise<Client>;
     findAll(): Promise<Client[]>;
-    findOne(id: String): import("mongoose").DocumentQuery<Client, Client, {}>;
-    update(id: String, createClientDto: CreateClientDto): import("mongoose").DocumentQuery<Client, Client, {}>;
-    deleteById(id: String): import("mongoose").DocumentQuery<Client, Client, {}>;
-    hasClient(id: String): boolean;
+    findOne(id: String): Promise<Client>;
+    update(id: String, createClientDto: CreateClientDto): Promise<Client>;
+    deleteById(id: String): Promise<Client>;
+    hasClient(id: String): Promise<boolean>;
 }

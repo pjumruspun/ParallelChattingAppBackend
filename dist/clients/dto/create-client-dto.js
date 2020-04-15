@@ -32,7 +32,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateClientDto.prototype, "name", void 0);
 __decorate([
-    swagger_1.ApiProperty({ type: GroupComplexObj }),
+    swagger_1.ApiProperty({ type: [GroupComplexObj] }),
     __metadata("design:type", Array)
 ], CreateClientDto.prototype, "group", void 0);
 exports.CreateClientDto = CreateClientDto;

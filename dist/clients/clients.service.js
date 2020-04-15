@@ -20,22 +20,23 @@ let ClientsService = class ClientsService {
     }
     async create(createClientDto) {
         const createdClient = new this.clientModel(createClientDto);
-        return createdClient.save();
+        return await createdClient.save();
     }
-    findAll() {
-        return this.clientModel.find().exec();
+    async findAll() {
+        return await this.clientModel.find().exec();
     }
-    findOne(id) {
-        return this.clientModel.findById(id);
+    async findOne(id) {
+        return await this.clientModel.findById(id);
     }
-    update(id, createClientDto) {
-        return this.clientModel.findByIdAndUpdate(id, createClientDto);
+    async update(id, createClientDto) {
+        await this.clientModel.findByIdAndUpdate(id, createClientDto);
+        return await this.clientModel.findById(id);
     }
-    deleteById(id) {
-        return this.clientModel.findByIdAndDelete(id);
+    async deleteById(id) {
+        return await this.clientModel.findByIdAndDelete(id);
     }
-    hasClient(id) {
-        var found = this.clientModel.findOne({ _id: id }) != null;
+    async hasClient(id) {
+        var found = await this.clientModel.findOne({ _id: id }) != null;
         return found;
     }
 };

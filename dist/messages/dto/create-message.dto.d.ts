@@ -1,13 +1,13 @@
-import { Schema } from 'mongoose';
+import { Types } from 'mongoose';
 export declare class CreateMessageDto {
     content: String;
     timestamp: Date;
     sender: {
-        type: Schema.Types.ObjectId;
+        type: Types.ObjectId;
         ref: 'Client';
     };
     group: {
-        type: Schema.Types.ObjectId;
+        type: Types.ObjectId;
         ref: 'Group';
     };
 }

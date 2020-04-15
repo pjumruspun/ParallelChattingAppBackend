@@ -6,5 +6,5 @@ export declare class MessagesController {
     constructor(messagesService: MessagesService);
     findAll(): Promise<Message[]>;
     findOne(id: string): string;
-    create(createMessageDto: CreateMessageDto): Promise<void>;
+    create(createMessageDto: CreateMessageDto): Promise<Message>;
 }

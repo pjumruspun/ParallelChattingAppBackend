@@ -20,6 +20,6 @@ export class CreateClientDto {
     @ApiProperty()
     readonly name: String;
 
-    @ApiProperty({ type: GroupComplexObj })
+    @ApiProperty({ type: [ GroupComplexObj ]})
     readonly group: [ GroupComplexObj ];
 }

@@ -30,7 +30,10 @@ let ClientsController = class ClientsController {
         return 'This API returns a client with id = ' + id + '!';
     }
     async create(createClientDto) {
-        this.clientsService.create(createClientDto);
+        return await this.clientsService.create(createClientDto);
+    }
+    async update(id, updateClientDto) {
+        return await this.clientsService.update(id, updateClientDto);
     }
     async addmember(memberid, groupid) {
         var createClientDto = [];
@@ -100,6 +103,27 @@ let ClientsController = class ClientsController {
         else
             return "Invalid group id";
     }
+    async setlastmsg(memberid, groupid, messageid) {
+        var createClientDto = [];
+        createClientDto = await this.clientsService.findOne(memberid);
+        if (this.groupService.hasGroup(groupid)) {
+            if (true) {
+                for (var i = 0; i < createClientDto.group.length; ++i) {
+                    console.log(createClientDto.group[i].group_id);
+                    if (createClientDto.group[i].group_id == groupid) {
+                        createClientDto.group[i].last_message_id = messageid;
+                    }
+                }
+                await this.clientsService.update(memberid, createClientDto);
+                return createClientDto;
+            }
+            else {
+                return "Duplicate group id";
+            }
+        }
+        else
+            return "Invalid group id";
+    }
     async delete(id) {
         return this.clientsService.deleteById(id);
     }
@@ -126,6 +150,14 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "create", null);
 __decorate([
+    common_1.Put('/:id'),
+    swagger_1.ApiBody({ type: create_client_dto_1.CreateClientDto }),
+    __param(0, common_1.Param('id')), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, create_client_dto_1.CreateClientDto]),
+    __metadata("design:returntype", Promise)
+], ClientsController.prototype, "update", null);
+__decorate([
     common_1.Put('/:memberid/group/add/:groupid'),
     __param(0, common_1.Param('memberid')), __param(1, common_1.Param('groupid')),
     __metadata("design:type", Function),
@@ -146,6 +178,13 @@ __decorate([
     __metadata("design:paramtypes", [String, String, Boolean]),
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "setjoinstatus", null);
+__decorate([
+    common_1.Put('/setlastmsg/:memberid/:groupid/:messageid'),
+    __param(0, common_1.Param('memberid')), __param(1, common_1.Param('groupid')), __param(2, common_1.Param('messageid')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String, String]),
+    __metadata("design:returntype", Promise)
+], ClientsController.prototype, "setlastmsg", null);
 __decorate([
     common_1.Delete('/:id'),
     __param(0, common_1.Param('id')),

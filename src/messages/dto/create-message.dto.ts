@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Schema }  from 'mongoose';
+import { Types }  from 'mongoose';
 
 export class CreateMessageDto {
     @ApiProperty()
@@ -10,13 +10,13 @@ export class CreateMessageDto {
 
     @ApiProperty()
     sender: {
-        type: Schema.Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'Client'
     };
 
     @ApiProperty()
     group: {
-        type: Schema.Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'Group'
     };
 }

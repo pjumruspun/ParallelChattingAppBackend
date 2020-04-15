@@ -27,7 +27,7 @@ let MessagesController = class MessagesController {
         return 'This API returns a message with id = ' + id + '!';
     }
     async create(createMessageDto) {
-        this.messagesService.create(createMessageDto);
+        return await this.messagesService.create(createMessageDto);
     }
 };
 __decorate([
