@@ -18,7 +18,7 @@ __decorate([
 ], CreateMessageDto.prototype, "content", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Date)
+    __metadata("design:type", Object)
 ], CreateMessageDto.prototype, "timestamp", void 0);
 __decorate([
     swagger_1.ApiProperty(),

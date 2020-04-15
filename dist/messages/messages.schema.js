@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const mongoose_1 = require("mongoose");
 exports.MessageSchema = new mongoose.Schema({
     content: String,
-    timestamp: Date,
+    timestamp: {
+        type: Date,
+        default: Date
+    },
     sender: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Client'

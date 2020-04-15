@@ -7,4 +7,5 @@ export declare class MessagesService {
     create(createMessageDto: CreateMessageDto): Promise<Message>;
     findAll(): Promise<Message[]>;
     hasMessage(id: String): boolean;
+    update(id: String, updateMessageDto: CreateMessageDto): Promise<Message>;
 }

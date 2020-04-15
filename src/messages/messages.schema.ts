@@ -3,7 +3,10 @@ import { Schema }  from 'mongoose';
 
 export const MessageSchema = new mongoose.Schema({
     content: String,
-    timestamp: Date,
+    timestamp: {
+        type: Date,
+        default: Date
+    },
     sender: {
         type: Schema.Types.ObjectId,
         ref: 'Client'

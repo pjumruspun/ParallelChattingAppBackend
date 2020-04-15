@@ -7,4 +7,5 @@ export declare class MessagesController {
     findAll(): Promise<Message[]>;
     findOne(id: string): string;
     create(createMessageDto: CreateMessageDto): Promise<Message>;
+    update(id: String, updateMessageDto: CreateMessageDto): Promise<Message>;
 }

@@ -1102,8 +1102,8 @@
         "signature": "da7470dc7c44576723af32806b8b8acd24fe989841071e57ba143e2564a851ba"
       },
       "../src/messages/interfaces/message.interface.ts": {
-        "version": "9e7d685e3865a07495d72b78ca3a0ed177919dce95e10dc4d3f0a4e36f95507c",
-        "signature": "1f93f19a4fa4d0ce047592f439097fcf64b95655a174ccfcb3eb50a97cd6d20f"
+        "version": "3ef7bb5e916c2923e5f8148adde2f4483fa508e6c7dbc196256d90e5a7c60324",
+        "signature": "a8ec20d8824d15c525d0e498d84621b5bf19c81b9b04ff640738932dbc455ce8"
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
         "version": "6ecc423e71318bafbd230e6059e082c377170dfc7e02fccfa600586f8604d452",
@@ -1246,16 +1246,16 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/messages/dto/create-message.dto.ts": {
-        "version": "ebd9cc927c099b4f607d8d8c05c760817b754d1499c4811d94b6bdd74ccfb368",
-        "signature": "bb10d88a2fbb78854dd063c31e5e8c62d6d881e1b2c99b3d56302f69e73f7d8c"
+        "version": "f8639658399f35a02649d8d44dcf2ec478b523938c35a80752d83060914f63aa",
+        "signature": "480d7f8d051f4cfe290e0abb9cd1d60ec79870bcd4348c0b42bb61dbf4ada91a"
       },
       "../src/messages/messages.service.ts": {
-        "version": "a90d0b10918766daeaa430e5f6068be182881cc85e6ffb2f68b1a0ed68258a71",
-        "signature": "bbabad8ef767b2e98c3bf2ad233fee1d648b4a2386edca4b5b9f231c49734017"
+        "version": "eecf9996513aa593e74996563de296462c5be4f8610c8df1f11e917d641bb2ba",
+        "signature": "bbe7d3cc4c30cd23154b6b5f1943423c3c959d140cada42c7f67be6e4c7a5f85"
       },
       "../src/messages/messages.controller.ts": {
-        "version": "a4dcf713f90c0239e654dc8c644757c812469c8fec6b0b586270041d116f4634",
-        "signature": "618c614115e3e920e72cf8eb54f0d5797c36cdb2fa16cad5e2e6c5bb37caa6ce"
+        "version": "6ff677397127066ad0a3a0f2958a6b3b7d4cfedeb251a74dbd71581be44b81be",
+        "signature": "3bd32ad01638965fed77f77734da87bfceec928c6f0b9c64bb2de2cabf439cc3"
       },
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts": {
         "version": "d6f8f5677b0e4076ff30fb38cefe5739f3247f4a311081a83aac4a7996b2224b",
@@ -1298,7 +1298,7 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/messages/messages.schema.ts": {
-        "version": "5dd1ee5e1f9851c50ae77a60e0a06a8ec7d5a596d0698352b21b7ac0c2cb1b5d",
+        "version": "38436463211eb8a1a6ca0e2a94c11b9bbefa4391ebb13bba0abe9d469a76adae",
         "signature": "dd152ca9d4b942754d4bedf116c60393c537732df2368bc43245527c6bbf38df"
       },
       "../src/database/database.providers.ts": {
@@ -8743,13 +8743,13 @@
       "../node_modules/@nestjs/mongoose/dist/mongoose.module.d.ts",
       "../node_modules/@nestjs/mongoose/dist/index.d.ts",
       "../node_modules/@nestjs/mongoose/index.d.ts",
-      "../src/messages/messages.schema.ts",
       "../src/database/database.providers.ts",
       "../src/database/database.module.ts",
       "../src/messages/message.providers.ts",
       "../src/messages/messages.module.ts",
       "../src/clients/interface/client.interface.ts",
       "../src/clients/dto/create-client-dto.ts",
+      "../src/clients/clients.service.ts",
       "../src/groups/interfaces/group.interface.ts",
       "../src/groups/dto/create-group.dto.ts",
       "../src/groups/dto/update-group.dto.ts",
@@ -8846,7 +8846,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/clients/clients.service.ts"
+      "../src/messages/messages.schema.ts"
     ]
   },
   "version": "3.8.3"

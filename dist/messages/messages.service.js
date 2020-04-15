@@ -30,6 +30,10 @@ let MessagesService = class MessagesService {
         console.log(found);
         return found;
     }
+    async update(id, updateMessageDto) {
+        await this.messageModel.findByIdAndUpdate(id, updateMessageDto);
+        return await this.messageModel.findById(id);
+    }
 };
 MessagesService = __decorate([
     common_1.Injectable(),

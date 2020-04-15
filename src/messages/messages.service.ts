@@ -23,4 +23,9 @@ export class MessagesService {
         console.log(found);
         return found;
     }
+
+    async update(id: String, updateMessageDto: CreateMessageDto){
+        await this.messageModel.findByIdAndUpdate(id, updateMessageDto);
+        return await this.messageModel.findById(id);
+    }
 }

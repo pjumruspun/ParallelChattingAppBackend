@@ -6,7 +6,10 @@ export class CreateMessageDto {
     content: String;
 
     @ApiProperty()
-    timestamp: Date;
+    timestamp: {
+        type: Date,
+        default: Date
+    };
 
     @ApiProperty()
     sender: {

@@ -29,6 +29,9 @@ let MessagesController = class MessagesController {
     async create(createMessageDto) {
         return await this.messagesService.create(createMessageDto);
     }
+    async update(id, updateMessageDto) {
+        return await this.messagesService.update(id, updateMessageDto);
+    }
 };
 __decorate([
     common_1.Get(),
@@ -44,12 +47,21 @@ __decorate([
     __metadata("design:returntype", String)
 ], MessagesController.prototype, "findOne", null);
 __decorate([
+    swagger_1.ApiBody({ type: create_message_dto_1.CreateMessageDto }),
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_message_dto_1.CreateMessageDto]),
     __metadata("design:returntype", Promise)
 ], MessagesController.prototype, "create", null);
+__decorate([
+    swagger_1.ApiBody({ type: create_message_dto_1.CreateMessageDto }),
+    common_1.Put('/:id'),
+    __param(0, common_1.Param('id')), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, create_message_dto_1.CreateMessageDto]),
+    __metadata("design:returntype", Promise)
+], MessagesController.prototype, "update", null);
 MessagesController = __decorate([
     swagger_1.ApiTags('Messages'),
     common_1.Controller('messages'),
