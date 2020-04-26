@@ -11,4 +11,10 @@ export class CreateGroupDto {
         type: Types.ObjectId,
         ref: 'Client'
     }];
+
+    @ApiProperty()
+    message: [{
+        type: Types.ObjectId,
+        ref: 'Message'
+    }]
 }

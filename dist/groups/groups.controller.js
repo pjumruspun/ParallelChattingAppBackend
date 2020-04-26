@@ -18,10 +18,14 @@ const create_group_dto_1 = require("./dto/create-group.dto");
 const swagger_1 = require("@nestjs/swagger");
 const mongoose_1 = require("mongoose");
 const clients_service_1 = require("../clients/clients.service");
+const clients_controller_1 = require("../clients/clients.controller");
+const messages_service_1 = require("../messages/messages.service");
 let GroupsController = class GroupsController {
-    constructor(groupsService, clientsService) {
+    constructor(groupsService, clientsService, clientController, messageService) {
         this.groupsService = groupsService;
         this.clientsService = clientsService;
+        this.clientController = clientController;
+        this.messageService = messageService;
     }
     async findAll() {
         return this.groupsService.findAll();
@@ -40,6 +44,7 @@ let GroupsController = class GroupsController {
             if (updateGroupDto.client.indexOf(member) == -1) {
                 updateGroupDto.client.push(member);
                 await this.groupsService.update(groupid, updateGroupDto);
+                this.clientController.addmember(memberid, groupid);
                 return updateGroupDto;
             }
             else
@@ -55,11 +60,28 @@ let GroupsController = class GroupsController {
             var member = new mongoose_1.Types.ObjectId(String(memberid));
             if (updateGroupDto.client.indexOf(member) != -1) {
                 updateGroupDto.client.remove(member);
+                this.clientController.removemember(memberid, groupid);
                 await this.groupsService.update(groupid, updateGroupDto);
                 return updateGroupDto;
             }
             else
                 return "No member id in group";
+        }
+        else
+            return "Invalid member id";
+    }
+    async addmessage(groupid, messageid) {
+        var updateGroupDto = [];
+        updateGroupDto = await this.groupsService.findOne(groupid);
+        if (this.messageService.hasMessage(messageid)) {
+            var message = new mongoose_1.Types.ObjectId(String(messageid));
+            if (updateGroupDto.message.indexOf(message) == -1) {
+                updateGroupDto.message.push(message);
+                await this.groupsService.update(groupid, updateGroupDto);
+                return updateGroupDto;
+            }
+            else
+                return "Duplicate member id";
         }
         else
             return "Invalid member id";
@@ -112,7 +134,10 @@ __decorate([
 GroupsController = __decorate([
     swagger_1.ApiTags('Groups'),
     common_1.Controller('groups'),
-    __metadata("design:paramtypes", [groups_service_1.GroupsService, clients_service_1.ClientsService])
+    __metadata("design:paramtypes", [groups_service_1.GroupsService,
+        clients_service_1.ClientsService,
+        clients_controller_1.ClientsController,
+        messages_service_1.MessagesService])
 ], GroupsController);
 exports.GroupsController = GroupsController;
 //# sourceMappingURL=groups.controller.js.map

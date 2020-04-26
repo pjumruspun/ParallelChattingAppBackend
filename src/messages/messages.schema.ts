@@ -5,7 +5,7 @@ export const MessageSchema = new mongoose.Schema({
     content: String,
     timestamp: {
         type: Date,
-        default: Date
+        default: Date.now
     },
     sender: {
         type: Schema.Types.ObjectId,

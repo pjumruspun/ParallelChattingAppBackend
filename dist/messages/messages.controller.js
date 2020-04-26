@@ -16,18 +16,27 @@ const common_1 = require("@nestjs/common");
 const messages_service_1 = require("./messages.service");
 const create_message_dto_1 = require("./dto/create-message.dto");
 const swagger_1 = require("@nestjs/swagger");
+const groups_controller_1 = require("../groups/groups.controller");
 let MessagesController = class MessagesController {
-    constructor(messagesService) {
+    constructor(messagesService, groupController) {
         this.messagesService = messagesService;
+        this.groupController = groupController;
     }
     async findAll() {
         return this.messagesService.findAll();
     }
     findOne(id) {
-        return 'This API returns a message with id = ' + id + '!';
+        return this.messagesService.findOne(id);
+    }
+    findbygroup(groupid) {
+        return this.messagesService.findByGroup(groupid);
     }
     async create(createMessageDto) {
-        return await this.messagesService.create(createMessageDto);
+        const returnMessage = await this.messagesService.create(createMessageDto);
+        if (createMessageDto.group != undefined) {
+            this.groupController.addmessage(String(createMessageDto.group), returnMessage._id);
+        }
+        return returnMessage;
     }
     async update(id, updateMessageDto) {
         return await this.messagesService.update(id, updateMessageDto);
@@ -44,8 +53,15 @@ __decorate([
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Promise)
 ], MessagesController.prototype, "findOne", null);
+__decorate([
+    common_1.Get('/findbygroup/:groupid'),
+    __param(0, common_1.Param('groupid')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], MessagesController.prototype, "findbygroup", null);
 __decorate([
     swagger_1.ApiBody({ type: create_message_dto_1.CreateMessageDto }),
     common_1.Post(),
@@ -65,7 +81,7 @@ __decorate([
 MessagesController = __decorate([
     swagger_1.ApiTags('Messages'),
     common_1.Controller('messages'),
-    __metadata("design:paramtypes", [messages_service_1.MessagesService])
+    __metadata("design:paramtypes", [messages_service_1.MessagesService, groups_controller_1.GroupsController])
 ], MessagesController);
 exports.MessagesController = MessagesController;
 //# sourceMappingURL=messages.controller.js.map

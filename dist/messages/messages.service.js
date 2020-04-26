@@ -22,17 +22,29 @@ let MessagesService = class MessagesService {
         const createdMessage = new this.messageModel(createMessageDto);
         return createdMessage.save();
     }
-    findAll() {
-        return this.messageModel.find().exec();
+    async findAll() {
+        return await this.messageModel.find().exec();
     }
-    hasMessage(id) {
-        var found = this.messageModel.findById(id) == null;
-        console.log(found);
+    async findOne(id) {
+        return await this.messageModel.findOne({ _id: id });
+    }
+    async hasMessage(id) {
+        var found = await this.messageModel.findOne({ _id: id }) != null;
         return found;
     }
     async update(id, updateMessageDto) {
         await this.messageModel.findByIdAndUpdate(id, updateMessageDto);
         return await this.messageModel.findById(id);
+    }
+    async findByGroup(groupid) {
+        const allMessages = await this.findAll();
+        var messageList = [];
+        allMessages.forEach(message => {
+            if (String(message.group) == groupid) {
+                messageList.push(message);
+            }
+        });
+        return messageList;
     }
 };
 MessagesService = __decorate([

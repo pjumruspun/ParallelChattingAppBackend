@@ -14,6 +14,9 @@ const groups_schema_1 = require("./groups.schema");
 const database_module_1 = require("../database/database.module");
 const group_providers_1 = require("./group.providers");
 const clients_module_1 = require("../clients/clients.module");
+const clients_controller_1 = require("../clients/clients.controller");
+const messages_service_1 = require("../messages/messages.service");
+const message_providers_1 = require("../messages/message.providers");
 let GroupsModule = class GroupsModule {
 };
 GroupsModule = __decorate([
@@ -26,6 +29,9 @@ GroupsModule = __decorate([
         controllers: [groups_controller_1.GroupsController],
         providers: [
             groups_service_1.GroupsService,
+            clients_controller_1.ClientsController,
+            messages_service_1.MessagesService,
+            ...message_providers_1.messageProviders,
             ...group_providers_1.groupProviders,
         ],
         exports: [groups_service_1.GroupsService],

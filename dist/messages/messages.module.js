@@ -13,6 +13,14 @@ const mongoose_1 = require("@nestjs/mongoose");
 const messages_schema_1 = require("./messages.schema");
 const database_module_1 = require("../database/database.module");
 const message_providers_1 = require("./message.providers");
+const groups_controller_1 = require("../groups/groups.controller");
+const groups_service_1 = require("../groups/groups.service");
+const clients_service_1 = require("../clients/clients.service");
+const groups_module_1 = require("../groups/groups.module");
+const clients_module_1 = require("../clients/clients.module");
+const clients_controller_1 = require("../clients/clients.controller");
+const group_providers_1 = require("../groups/group.providers");
+const client_providers_1 = require("../clients/client.providers");
 let MessagesModule = class MessagesModule {
 };
 MessagesModule = __decorate([
@@ -24,7 +32,13 @@ MessagesModule = __decorate([
         controllers: [messages_controller_1.MessagesController],
         providers: [
             messages_service_1.MessagesService,
+            groups_controller_1.GroupsController,
+            groups_service_1.GroupsService,
+            clients_controller_1.ClientsController,
+            clients_service_1.ClientsService,
             ...message_providers_1.messageProviders,
+            ...group_providers_1.groupProviders,
+            ...client_providers_1.clientProviders
         ],
         exports: [messages_service_1.MessagesService],
     })

@@ -7,4 +7,8 @@ export const GroupSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Client'
     }],
+    message: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Message'
+    }]
 });

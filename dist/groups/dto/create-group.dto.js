@@ -20,5 +20,9 @@ __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Array)
 ], CreateGroupDto.prototype, "client", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Array)
+], CreateGroupDto.prototype, "message", void 0);
 exports.CreateGroupDto = CreateGroupDto;
 //# sourceMappingURL=create-group.dto.js.map

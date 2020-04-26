@@ -6,7 +6,7 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Parallel Project 2020')
-    .setDescription('API Swagger for parallel project')
+    .setDescription('Live API Documentation for parallel project, by Phatcharapon Jumruspun')
     .setVersion('1.0')
     .addTag('Clients')
     .addTag('Groups')

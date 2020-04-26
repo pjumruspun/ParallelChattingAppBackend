@@ -7,7 +7,7 @@ import { UpdateGroupDto } from './dto/update-group.dto';
 @Injectable()
 export class GroupsService {
     constructor(
-        @Inject('GROUP_MODEL') private groupModel: Model<Group>
+        @Inject('GROUP_MODEL') private groupModel: Model<Group>,
     ){}
 
     async create(createGroupDto: CreateGroupDto): Promise<Group> {

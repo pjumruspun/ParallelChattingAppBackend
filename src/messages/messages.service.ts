@@ -14,18 +14,32 @@ export class MessagesService {
         return createdMessage.save();
     }
 
-    findAll() {
-        return this.messageModel.find().exec();
+    async findAll(): Promise<Message[]> {
+        return await this.messageModel.find().exec();
     }
 
-    hasMessage(id: String) {
-        var found: boolean = this.messageModel.findById(id) == null;
-        console.log(found);
+    async findOne(id): Promise<Message> {
+        return await this.messageModel.findOne({ _id: id });
+    }
+    async hasMessage(id: String) {
+        var found = await this.messageModel.findOne({ _id: id }) != null;
+        // console.log(found);
         return found;
     }
 
     async update(id: String, updateMessageDto: CreateMessageDto){
         await this.messageModel.findByIdAndUpdate(id, updateMessageDto);
         return await this.messageModel.findById(id);
+    }
+
+    async findByGroup(groupid: string): Promise<Message[]> {
+        const allMessages = await this.findAll();
+        var messageList = []
+        allMessages.forEach(message => {
+            if(String(message.group) == groupid){
+                messageList.push(message);
+            }
+        });
+        return messageList;
     }
 }

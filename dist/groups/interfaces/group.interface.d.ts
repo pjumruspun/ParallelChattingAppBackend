@@ -6,4 +6,8 @@ export interface Group extends Document {
         type: Types.ObjectId;
         ref: 'Client';
     }];
+    message: [{
+        type: Types.ObjectId;
+        ref: 'Message';
+    }];
 }

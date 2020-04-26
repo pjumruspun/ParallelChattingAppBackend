@@ -6,11 +6,18 @@ import { UpdateGroupDto } from './dto/update-group.dto'
 import { ApiTags } from '@nestjs/swagger';
 import { Types } from 'mongoose';
 import { ClientsService } from 'src/clients/clients.service';
+import { ClientsController } from 'src/clients/clients.controller';
+import { MessagesService } from 'src/messages/messages.service';
 
 @ApiTags('Groups')
 @Controller('groups')
 export class GroupsController {
-    constructor(private groupsService: GroupsService, private clientsService: ClientsService) {}
+    constructor(
+        private groupsService: GroupsService, 
+        private clientsService: ClientsService, 
+        private clientController: ClientsController,
+        private messageService: MessagesService,
+    ) {}
     @Get()
     async findAll(): Promise<Group[]> {
         return this.groupsService.findAll();
@@ -37,6 +44,7 @@ export class GroupsController {
             {
                 updateGroupDto.client.push(member);
                 await this.groupsService.update(groupid, updateGroupDto);
+                this.clientController.addmember(memberid, groupid);
                 return updateGroupDto;
             }
             else return "Duplicate member id"
@@ -57,10 +65,32 @@ export class GroupsController {
             if(updateGroupDto.client.indexOf(member) != -1)
             {
                 updateGroupDto.client.remove(member);
+                this.clientController.removemember(memberid, groupid);
                 await this.groupsService.update(groupid, updateGroupDto);
                 return updateGroupDto;
             }
             else return "No member id in group"
+            
+        }
+        else
+            return "Invalid member id";
+        // console.log(updateGroupDto);
+    }
+
+    
+    async addmessage(groupid: String, messageid: String){
+        var updateGroupDto: any = []
+        updateGroupDto = await this.groupsService.findOne(groupid);
+        if(this.messageService.hasMessage(messageid)){
+            var message: Types.ObjectId = new Types.ObjectId(String(messageid))
+            // console.log(updateGroupDto.client.indexOf(member));
+            if(updateGroupDto.message.indexOf(message) == -1)
+            {
+                updateGroupDto.message.push(message);
+                await this.groupsService.update(groupid, updateGroupDto);
+                return updateGroupDto;
+            }
+            else return "Duplicate member id"
             
         }
         else

@@ -20,5 +20,9 @@ __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Array)
 ], UpdateGroupDto.prototype, "client", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Array)
+], UpdateGroupDto.prototype, "message", void 0);
 exports.UpdateGroupDto = UpdateGroupDto;
 //# sourceMappingURL=update-group.dto.js.map

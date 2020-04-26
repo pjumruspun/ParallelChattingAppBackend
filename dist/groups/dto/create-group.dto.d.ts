@@ -5,4 +5,8 @@ export declare class CreateGroupDto {
         type: Types.ObjectId;
         ref: 'Client';
     }];
+    message: [{
+        type: Types.ObjectId;
+        ref: 'Message';
+    }];
 }

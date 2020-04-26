@@ -6,6 +6,8 @@ export declare class MessagesService {
     constructor(messageModel: Model<Message>);
     create(createMessageDto: CreateMessageDto): Promise<Message>;
     findAll(): Promise<Message[]>;
-    hasMessage(id: String): boolean;
+    findOne(id: any): Promise<Message>;
+    hasMessage(id: String): Promise<boolean>;
     update(id: String, updateMessageDto: CreateMessageDto): Promise<Message>;
+    findByGroup(groupid: string): Promise<Message[]>;
 }
