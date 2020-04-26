@@ -7,13 +7,16 @@ exports.ClientSchema = new mongoose.Schema({
         {
             group_id: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'Group',
+                ref: 'Group'
             },
             last_message_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Message',
             },
-            join: Boolean
+            join: {
+                type: Boolean,
+                default: true,
+            }
         }
     ]
 });

@@ -22,7 +22,7 @@ __decorate([
 ], GroupComplexObj.prototype, "last_message_id", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Boolean)
+    __metadata("design:type", Object)
 ], GroupComplexObj.prototype, "join", void 0);
 ;
 class CreateClientDto {

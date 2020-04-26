@@ -18,8 +18,8 @@ export class ClientsService {
         return await this.clientModel.find().exec ();
     }
 
-    async findOne(id: String){
-        return await this.clientModel.findById(id);
+    async findOne(id: String): Promise<Client> {
+        return await this.clientModel.findOne({_id: id});
     }
 
     async update(id: String, createClientDto: CreateClientDto) {
@@ -36,5 +36,17 @@ export class ClientsService {
         var found = await this.clientModel.findOne({ _id: id }) != null;
         // console.log(found);
         return found;
+    }
+
+    async isJoined(clientid: String, groupid: String){
+        var client = await this.clientModel.findOne({ _id: client });
+        var groupList = client.group;
+        var targetGroupJoiningStatus;
+        groupList.forEach(group => {
+            if(String(group.group_id) == groupid){
+                targetGroupJoiningStatus = group.join;
+            }
+        });
+        return targetGroupJoiningStatus;
     }
 }

@@ -26,7 +26,7 @@ let ClientsService = class ClientsService {
         return await this.clientModel.find().exec();
     }
     async findOne(id) {
-        return await this.clientModel.findById(id);
+        return await this.clientModel.findOne({ _id: id });
     }
     async update(id, createClientDto) {
         await this.clientModel.findByIdAndUpdate(id, createClientDto);
@@ -38,6 +38,17 @@ let ClientsService = class ClientsService {
     async hasClient(id) {
         var found = await this.clientModel.findOne({ _id: id }) != null;
         return found;
+    }
+    async isJoined(clientid, groupid) {
+        var client = await this.clientModel.findOne({ _id: client });
+        var groupList = client.group;
+        var targetGroupJoiningStatus;
+        groupList.forEach(group => {
+            if (String(group.group_id) == groupid) {
+                targetGroupJoiningStatus = group.join;
+            }
+        });
+        return targetGroupJoiningStatus;
     }
 };
 ClientsService = __decorate([

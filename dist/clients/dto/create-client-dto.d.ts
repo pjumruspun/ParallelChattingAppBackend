@@ -8,7 +8,10 @@ declare class GroupComplexObj {
         type: Types.ObjectId;
         ref: 'Message';
     };
-    readonly join: Boolean;
+    readonly join: {
+        type: Boolean;
+        default: true;
+    };
 }
 export declare class CreateClientDto {
     readonly name: String;

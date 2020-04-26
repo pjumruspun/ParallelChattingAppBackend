@@ -10,4 +10,5 @@ export declare class ClientsService {
     update(id: String, createClientDto: CreateClientDto): Promise<Client>;
     deleteById(id: String): Promise<Client>;
     hasClient(id: String): Promise<boolean>;
+    isJoined(clientid: String, groupid: String): Promise<any>;
 }

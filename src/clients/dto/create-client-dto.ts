@@ -13,7 +13,10 @@ class GroupComplexObj  {
         ref: 'Message',
     };
     @ApiProperty()
-    readonly join: Boolean;
+    readonly join: {
+        type: Boolean,
+        default: true,
+    };
 };
 
 export class CreateClientDto {

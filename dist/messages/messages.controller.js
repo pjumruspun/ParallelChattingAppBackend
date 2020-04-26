@@ -17,10 +17,13 @@ const messages_service_1 = require("./messages.service");
 const create_message_dto_1 = require("./dto/create-message.dto");
 const swagger_1 = require("@nestjs/swagger");
 const groups_controller_1 = require("../groups/groups.controller");
+const clients_service_1 = require("../clients/clients.service");
+const client_interface_1 = require("../clients/interface/client.interface");
 let MessagesController = class MessagesController {
-    constructor(messagesService, groupController) {
+    constructor(messagesService, groupController, clientService) {
         this.messagesService = messagesService;
         this.groupController = groupController;
+        this.clientService = clientService;
     }
     async findAll() {
         return this.messagesService.findAll();
@@ -29,6 +32,11 @@ let MessagesController = class MessagesController {
         return this.messagesService.findOne(id);
     }
     findbygroup(groupid) {
+        return this.messagesService.findByGroup(groupid);
+    }
+    read(clientid, groupid) {
+        var join = this.clientService.isJoined(clientid, groupid);
+        console.log(join);
         return this.messagesService.findByGroup(groupid);
     }
     async create(createMessageDto) {
@@ -63,6 +71,13 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], MessagesController.prototype, "findbygroup", null);
 __decorate([
+    common_1.Get('/read/:clientid/:groupid'),
+    __param(0, common_1.Param('clientid')), __param(1, common_1.Param('groupid')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], MessagesController.prototype, "read", null);
+__decorate([
     swagger_1.ApiBody({ type: create_message_dto_1.CreateMessageDto }),
     common_1.Post(),
     __param(0, common_1.Body()),
@@ -81,7 +96,9 @@ __decorate([
 MessagesController = __decorate([
     swagger_1.ApiTags('Messages'),
     common_1.Controller('messages'),
-    __metadata("design:paramtypes", [messages_service_1.MessagesService, groups_controller_1.GroupsController])
+    __metadata("design:paramtypes", [messages_service_1.MessagesService,
+        groups_controller_1.GroupsController,
+        clients_service_1.ClientsService])
 ], MessagesController);
 exports.MessagesController = MessagesController;
 //# sourceMappingURL=messages.controller.js.map

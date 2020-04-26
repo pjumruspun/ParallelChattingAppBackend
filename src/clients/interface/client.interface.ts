@@ -12,7 +12,10 @@ export interface Client extends Document {
                 type: Types.ObjectId,
                 ref: 'Message',
             },
-            join: Boolean,
+            join: {
+                type: Boolean,
+                default: true,
+            }
         }
     ];
 }

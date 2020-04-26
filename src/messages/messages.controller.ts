@@ -4,11 +4,17 @@ import { Message } from './interfaces/message.interface';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { ApiTags, ApiBody } from '@nestjs/swagger';
 import { GroupsController } from 'src/groups/groups.controller';
+import { ClientsService } from 'src/clients/clients.service';
+import { Client } from 'src/clients/interface/client.interface';
 
 @ApiTags('Messages')
 @Controller('messages')
 export class MessagesController {
-    constructor(private messagesService: MessagesService, private groupController: GroupsController) {}
+    constructor(
+        private messagesService: MessagesService, 
+        private groupController: GroupsController,
+        private clientService: ClientsService,
+    ) {}
     @Get()
     async findAll(): Promise<Message[]> {
         return this.messagesService.findAll();
@@ -21,6 +27,14 @@ export class MessagesController {
 
     @Get('/findbygroup/:groupid')
     findbygroup(@Param('groupid') groupid: string): Promise<Message[]>{
+        return this.messagesService.findByGroup(groupid);
+    }
+
+    @Get('/read/:clientid/:groupid')
+    read(@Param('clientid') clientid: string, @Param('groupid') groupid: string): Promise<Message[]>{
+        var join = this.clientService.isJoined(clientid, groupid);
+        console.log(join);
+        
         return this.messagesService.findByGroup(groupid);
     }
 
