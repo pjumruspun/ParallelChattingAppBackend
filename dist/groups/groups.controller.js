@@ -38,6 +38,8 @@ let GroupsController = class GroupsController {
     }
     async addmember(groupid, memberid) {
         var updateGroupDto = [];
+        var messages = await this.messageService.findByGroup(String(groupid));
+        var last_message = messages[messages.length - 1];
         updateGroupDto = await this.groupsService.findOne(groupid);
         if (this.clientsService.hasClient(memberid)) {
             var member = new mongoose_1.Types.ObjectId(String(memberid));

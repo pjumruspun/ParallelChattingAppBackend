@@ -120,7 +120,6 @@ let ClientsController = class ClientsController {
         if (this.groupService.hasGroup(groupid)) {
             if (true) {
                 for (var i = 0; i < createClientDto.group.length; ++i) {
-                    console.log(createClientDto.group[i].group_id);
                     if (createClientDto.group[i].group_id == groupid) {
                         createClientDto.group[i].last_message_id = messageid;
                     }
@@ -169,14 +168,12 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "update", null);
 __decorate([
-    common_1.Put('/:memberid/group/add/:groupid'),
     __param(0, common_1.Param('memberid')), __param(1, common_1.Param('groupid')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "addmember", null);
 __decorate([
-    common_1.Put('/:memberid/group/remove/:groupid'),
     __param(0, common_1.Param('memberid')), __param(1, common_1.Param('groupid')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),

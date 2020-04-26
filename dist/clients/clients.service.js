@@ -40,7 +40,7 @@ let ClientsService = class ClientsService {
         return found;
     }
     async isJoined(clientid, groupid) {
-        var client = await this.clientModel.findOne({ _id: client });
+        var client = await this.clientModel.findOne({ _id: clientid });
         var groupList = client.group;
         var targetGroupJoiningStatus;
         groupList.forEach(group => {

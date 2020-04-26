@@ -36,6 +36,10 @@ export class GroupsController {
     @Put('/:groupid/client/add/:memberid')
     async addmember(@Param('groupid') groupid: String, @Param('memberid') memberid: String){
         var updateGroupDto: any = []
+        var messages = await this.messageService.findByGroup(String(groupid));
+        // console.log(messages);
+        // console.log(messages[messages.length-1])
+        var last_message = messages[messages.length-1];
         updateGroupDto = await this.groupsService.findOne(groupid);
         if(this.clientsService.hasClient(memberid)){
             var member: Types.ObjectId = new Types.ObjectId(String(memberid))
@@ -45,6 +49,7 @@ export class GroupsController {
                 updateGroupDto.client.push(member);
                 await this.groupsService.update(groupid, updateGroupDto);
                 this.clientController.addmember(memberid, groupid);
+                // this.clientController.setlastmsg(memberid, groupid, String(last_message._id));
                 return updateGroupDto;
             }
             else return "Duplicate member id"

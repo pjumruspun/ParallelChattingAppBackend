@@ -39,8 +39,10 @@ export class ClientsService {
     }
 
     async isJoined(clientid: String, groupid: String){
-        var client = await this.clientModel.findOne({ _id: client });
+        var client = await this.clientModel.findOne({ _id: clientid });
+        // console.log(client);
         var groupList = client.group;
+        // console.log(groupList)
         var targetGroupJoiningStatus;
         groupList.forEach(group => {
             if(String(group.group_id) == groupid){

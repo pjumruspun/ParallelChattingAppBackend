@@ -32,7 +32,8 @@ export class ClientsController {
         return await this.clientsService.update(id, updateClientDto);
     }
 
-    @Put('/:memberid/group/add/:groupid')
+    
+    //@Put('/:memberid/group/add/:groupid')
     async addmember(@Param('memberid') memberid: String, @Param('groupid') groupid: String){
         var createClientDto: any = []
         createClientDto = await this.clientsService.findOne(memberid);
@@ -42,7 +43,6 @@ export class ClientsController {
                 group_id: groupid,
                 join: true
             }
-
             if(true){
                 var dupe: Boolean = false;
                 for(var i = 0; i < createClientDto.group.length; ++i){
@@ -67,7 +67,7 @@ export class ClientsController {
         // console.log(updateGroupDto);
     }
 
-    @Put('/:memberid/group/remove/:groupid')
+    // @Put('/:memberid/group/remove/:groupid')
     async removemember(@Param('memberid') memberid: String, @Param('groupid') groupid: String){
         var createClientDto: any = []
         createClientDto = await this.clientsService.findOne(memberid);
@@ -127,17 +127,19 @@ export class ClientsController {
     @Put('/setlastmsg/:memberid/:groupid/:messageid')
     async setlastmsg(@Param('memberid') memberid: String, @Param('groupid') groupid: String, @Param('messageid') messageid: String){
         var createClientDto: any = []
+        // console.log(messageid);
         createClientDto = await this.clientsService.findOne(memberid);
         if(this.groupService.hasGroup(groupid)){
             if(true){
                 for(var i = 0; i < createClientDto.group.length; ++i){
-                    console.log(createClientDto.group[i].group_id)
+                    // console.log(createClientDto.group[i].group_id)
                     if(createClientDto.group[i].group_id == groupid){
                         createClientDto.group[i].last_message_id = messageid;
                     }
                 }
                 // console.log(createClientDto);
                 await this.clientsService.update(memberid, createClientDto);
+                // console.log(messageid);
                 return createClientDto;
             }
             else{

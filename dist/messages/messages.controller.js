@@ -18,12 +18,13 @@ const create_message_dto_1 = require("./dto/create-message.dto");
 const swagger_1 = require("@nestjs/swagger");
 const groups_controller_1 = require("../groups/groups.controller");
 const clients_service_1 = require("../clients/clients.service");
-const client_interface_1 = require("../clients/interface/client.interface");
+const clients_controller_1 = require("../clients/clients.controller");
 let MessagesController = class MessagesController {
-    constructor(messagesService, groupController, clientService) {
+    constructor(messagesService, groupController, clientService, clientController) {
         this.messagesService = messagesService;
         this.groupController = groupController;
         this.clientService = clientService;
+        this.clientController = clientController;
     }
     async findAll() {
         return this.messagesService.findAll();
@@ -34,9 +35,15 @@ let MessagesController = class MessagesController {
     findbygroup(groupid) {
         return this.messagesService.findByGroup(groupid);
     }
-    read(clientid, groupid) {
-        var join = this.clientService.isJoined(clientid, groupid);
+    async read(clientid, groupid) {
+        var join = await this.clientService.isJoined(clientid, groupid);
         console.log(join);
+        if (join) {
+            var lastMessage = await this.getlastmessage(groupid);
+            console.log(lastMessage);
+            console.log(lastMessage._id);
+            this.clientController.setlastmsg(clientid, groupid, lastMessage._id);
+        }
         return this.messagesService.findByGroup(groupid);
     }
     async create(createMessageDto) {
@@ -48,6 +55,11 @@ let MessagesController = class MessagesController {
     }
     async update(id, updateMessageDto) {
         return await this.messagesService.update(id, updateMessageDto);
+    }
+    async getlastmessage(groupid) {
+        var messageByGroup = await this.messagesService.findByGroup(groupid);
+        var lastMessage = messageByGroup[messageByGroup.length - 1];
+        return lastMessage;
     }
 };
 __decorate([
@@ -98,7 +110,8 @@ MessagesController = __decorate([
     common_1.Controller('messages'),
     __metadata("design:paramtypes", [messages_service_1.MessagesService,
         groups_controller_1.GroupsController,
-        clients_service_1.ClientsService])
+        clients_service_1.ClientsService,
+        clients_controller_1.ClientsController])
 ], MessagesController);
 exports.MessagesController = MessagesController;
 //# sourceMappingURL=messages.controller.js.map

@@ -5,7 +5,7 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { ApiTags, ApiBody } from '@nestjs/swagger';
 import { GroupsController } from 'src/groups/groups.controller';
 import { ClientsService } from 'src/clients/clients.service';
-import { Client } from 'src/clients/interface/client.interface';
+import { ClientsController } from 'src/clients/clients.controller';
 
 @ApiTags('Messages')
 @Controller('messages')
@@ -14,6 +14,7 @@ export class MessagesController {
         private messagesService: MessagesService, 
         private groupController: GroupsController,
         private clientService: ClientsService,
+        private clientController: ClientsController
     ) {}
     @Get()
     async findAll(): Promise<Message[]> {
@@ -31,10 +32,15 @@ export class MessagesController {
     }
 
     @Get('/read/:clientid/:groupid')
-    read(@Param('clientid') clientid: string, @Param('groupid') groupid: string): Promise<Message[]>{
-        var join = this.clientService.isJoined(clientid, groupid);
+    async read(@Param('clientid') clientid: string, @Param('groupid') groupid: string): Promise<Message[]>{
+        var join = await this.clientService.isJoined(clientid, groupid);
         console.log(join);
-        
+        if(join){
+            var lastMessage = await this.getlastmessage(groupid);
+            console.log(lastMessage)
+            console.log(lastMessage._id)
+            this.clientController.setlastmsg(clientid, groupid, lastMessage._id)
+        }
         return this.messagesService.findByGroup(groupid);
     }
 
@@ -52,5 +58,11 @@ export class MessagesController {
     @Put('/:id')
     async update(@Param('id')id: String, @Body() updateMessageDto: CreateMessageDto) {
         return await this.messagesService.update(id, updateMessageDto);
+    }
+
+    async getlastmessage(groupid: string): Promise<Message> {
+        var messageByGroup = await this.messagesService.findByGroup(groupid);
+        var lastMessage = messageByGroup[messageByGroup.length-1];
+        return lastMessage;
     }
 }
