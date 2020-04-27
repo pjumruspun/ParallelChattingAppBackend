@@ -18,8 +18,12 @@ export class ClientsService {
         return await this.clientModel.find().exec ();
     }
 
+    async findByName(name: string): Promise<Client> {
+        return await this.clientModel.findOne({ name: name });
+    }
+
     async findOne(id: String): Promise<Client> {
-        return await this.clientModel.findOne({_id: id});
+        return await this.clientModel.findOne({ _id: id });
     }
 
     async update(id: String, createClientDto: CreateClientDto) {

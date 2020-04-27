@@ -25,6 +25,9 @@ let GroupsService = class GroupsService {
     async findAll() {
         return this.groupModel.find().exec();
     }
+    async findByName(name) {
+        return this.groupModel.findOne({ name: name });
+    }
     async findOne(id) {
         return this.groupModel.findById(id);
     }

@@ -11,6 +11,7 @@ export declare class GroupsController {
     private messageService;
     constructor(groupsService: GroupsService, clientsService: ClientsService, clientController: ClientsController, messageService: MessagesService);
     findAll(): Promise<Group[]>;
+    findByName(name: string): Promise<Group>;
     findOne(id: string): Promise<Group>;
     create(createGroupDto: CreateGroupDto): Promise<Group>;
     addmember(groupid: String, memberid: String): Promise<any>;

@@ -1266,8 +1266,8 @@
         "signature": "a32f4b93840b65076032b3934d5a74e7d4aa1695e1d5a81672c6727285063260"
       },
       "../src/groups/groups.service.ts": {
-        "version": "7de77e8b2d62e334ba285eab4fdac6687fb9e6e547b657cf365a185101027e5a",
-        "signature": "8469c207138d3da254872e567fc512bc480f92bddd0a2d28a5807912109d74fa"
+        "version": "e0b96ccd74093c88071e0ebe48cc867af1f597c0d81802d1dd5c05edb3eb10ba",
+        "signature": "9a487ce70ea56d88b9e467a338a43972b2a572ff527fcb91bf4671907599980b"
       },
       "../src/clients/interface/client.interface.ts": {
         "version": "750865cc5aa758fee2c2e030526590ed29f35108c7b8ee77a379d1ee37e7dad1",
@@ -1278,16 +1278,16 @@
         "signature": "42d6b35d652a3feb420eff9e650dd3ab9694b74402228b0f672e6d2796a4aa78"
       },
       "../src/clients/clients.service.ts": {
-        "version": "3f0287bca7b92785fd6163a8605c209370a2deff37128d0f9b4102ac57a9aba5",
-        "signature": "07e3ccb9ed7dab5818f8d60c577e79908d83d0a108defb4a5d10f789df1200b9"
+        "version": "581118d4ede1169711d074b43678377f197f848047ee91a2d6627612d62d6be9",
+        "signature": "ca3cf3dcb43c6e851555b5ceb25acff13dd12c76df0cb1615f0b863bcee24645"
       },
       "../src/clients/clients.controller.ts": {
-        "version": "2debe9ab21291185a6e5af58810fb36f3f237218381f0c74665f0039e312e0f5",
-        "signature": "ff3ffdbade82f025d69ef750d834209a6826625dd8f760ba86c400d1a9b57a9e"
+        "version": "71fe2656c503e52dd6f4a132e4703083314a8cbd5d95e78e187fdc24be00c8c6",
+        "signature": "4daac59c1f62454d43bc69bf2b682db62ea2786b1377118478e966b5a71a58c2"
       },
       "../src/groups/groups.controller.ts": {
-        "version": "cb2af161037dd3f8a682a345ef8e2c098879ee2b0d119d1e87683e8445e9a656",
-        "signature": "5cbc5e56033822d2c8ecc48d40468eb5ec0133b94acb647ce4b9d1430d15e2f0"
+        "version": "3b2faa0a98b1ffc5b1bbece4ed14e2fd1e861eedd0175acd4920282b83da9f8a",
+        "signature": "03eb8f642ce13379968470b55627dc096381b5be9fc9bd8573a4b30ff41d24ad"
       },
       "../src/messages/messages.controller.ts": {
         "version": "4cac1c388300caf00e0f8042638e20a655bea85c33e0429e1bb48b572292d892",
@@ -8761,7 +8761,6 @@
       "../src/clients/dto/create-client-dto.ts",
       "../src/clients/clients.service.ts",
       "../src/clients/clients.controller.ts",
-      "../src/groups/groups.controller.ts",
       "../src/messages/messages.controller.ts",
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts",
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.utils.d.ts",
@@ -8821,6 +8820,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
+      "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
@@ -8867,7 +8867,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/main.ts"
+      "../src/groups/groups.controller.ts"
     ]
   },
   "version": "3.8.3"

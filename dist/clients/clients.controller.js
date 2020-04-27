@@ -27,7 +27,10 @@ let ClientsController = class ClientsController {
         return this.clientsService.findAll();
     }
     findOne(id) {
-        return 'This API returns a client with id = ' + id + '!';
+        return this.clientsService.findOne(id);
+    }
+    findByName(name) {
+        return this.clientsService.findByName(name);
     }
     async create(createClientDto) {
         return await this.clientsService.create(createClientDto);
@@ -149,8 +152,15 @@ __decorate([
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "findOne", null);
+__decorate([
+    common_1.Get('/findbyname/:name'),
+    __param(0, common_1.Param('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ClientsController.prototype, "findByName", null);
 __decorate([
     common_1.Post(),
     swagger_1.ApiBody({ type: create_client_dto_1.CreateClientDto }),

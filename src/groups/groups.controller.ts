@@ -23,6 +23,11 @@ export class GroupsController {
         return this.groupsService.findAll();
     }
 
+    @Get('/findbyname/:name')
+    async findByName(@Param('name') name: string): Promise<Group> {
+        return this.groupsService.findByName(name);
+    }
+
     @Get('/:id')
     findOne(@Param('id') id: string): Promise<Group> {
         return this.groupsService.findOne(id);

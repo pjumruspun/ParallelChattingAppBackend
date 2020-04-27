@@ -6,6 +6,7 @@ export declare class ClientsService {
     constructor(clientModel: Model<Client>);
     create(createClientDto: CreateClientDto): Promise<Client>;
     findAll(): Promise<Client[]>;
+    findByName(name: string): Promise<Client>;
     findOne(id: String): Promise<Client>;
     update(id: String, createClientDto: CreateClientDto): Promise<Client>;
     deleteById(id: String): Promise<Client>;

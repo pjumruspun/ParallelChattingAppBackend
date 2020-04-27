@@ -7,7 +7,8 @@ export declare class ClientsController {
     private groupService;
     constructor(clientsService: ClientsService, groupService: GroupsService);
     findAll(): Promise<Client[]>;
-    findOne(id: string): string;
+    findOne(id: string): Promise<Client>;
+    findByName(name: string): Promise<Client>;
     create(createClientDto: CreateClientDto): Promise<Client>;
     update(id: String, updateClientDto: CreateClientDto): Promise<Client>;
     addmember(memberid: String, groupid: String): Promise<any>;

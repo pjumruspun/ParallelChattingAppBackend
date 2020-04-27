@@ -7,6 +7,7 @@ export declare class GroupsService {
     constructor(groupModel: Model<Group>);
     create(createGroupDto: CreateGroupDto): Promise<Group>;
     findAll(): Promise<Group[]>;
+    findByName(name: string): Promise<Group>;
     findOne(id: String): Promise<Group>;
     update(id: String, updateGroupDto: UpdateGroupDto): Promise<Group>;
     deleteById(id: String): Promise<Group>;

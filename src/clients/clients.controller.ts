@@ -16,8 +16,13 @@ export class ClientsController {
     }
 
     @Get('/:id')
-    findOne(@Param('id') id: string): string {
-        return 'This API returns a client with id = ' + id + '!';
+    findOne(@Param('id') id: string): Promise<Client> {
+        return this.clientsService.findOne(id);
+    }
+
+    @Get('/findbyname/:name')
+    findByName(@Param('name') name: string): Promise<Client> {
+        return this.clientsService.findByName(name);
     }
 
     @Post()

@@ -25,6 +25,9 @@ let ClientsService = class ClientsService {
     async findAll() {
         return await this.clientModel.find().exec();
     }
+    async findByName(name) {
+        return await this.clientModel.findOne({ name: name });
+    }
     async findOne(id) {
         return await this.clientModel.findOne({ _id: id });
     }

@@ -30,6 +30,9 @@ let GroupsController = class GroupsController {
     async findAll() {
         return this.groupsService.findAll();
     }
+    async findByName(name) {
+        return this.groupsService.findByName(name);
+    }
     findOne(id) {
         return this.groupsService.findOne(id);
     }
@@ -98,6 +101,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "findAll", null);
+__decorate([
+    common_1.Get('/findbyname/:name'),
+    __param(0, common_1.Param('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], GroupsController.prototype, "findByName", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),
