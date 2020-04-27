@@ -1526,7 +1526,7 @@
         "signature": "7b5ed961a0e03965299591d73de8b8c41e8a68105ff4fc07a240b0dfb94a5a3d"
       },
       "../src/main.ts": {
-        "version": "cbe07f597492522c0d17ed3e53d2098299c7d884f592c7948d3271cf2820cb42",
+        "version": "ed0acb9282d4c9effe32a8096b0eaf9387b407f5d376d3f679a374cc3bcfab93",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -8759,6 +8759,7 @@
       "../src/groups/groups.service.ts",
       "../src/clients/interface/client.interface.ts",
       "../src/clients/dto/create-client-dto.ts",
+      "../src/clients/clients.service.ts",
       "../src/clients/clients.controller.ts",
       "../src/groups/groups.controller.ts",
       "../src/messages/messages.controller.ts",
@@ -8820,7 +8821,6 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
-      "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
@@ -8867,7 +8867,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/clients/clients.service.ts"
+      "../src/main.ts"
     ]
   },
   "version": "3.8.3"
