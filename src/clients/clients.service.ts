@@ -36,6 +36,16 @@ export class ClientsService {
         return await this.clientModel.findByIdAndDelete(id);
     }
 
+    async deleteAll(): Promise<Client[]> {
+        var deletedClients = [];
+        var allClients = await this.findAll();
+        allClients.forEach(client => {
+            deletedClients.push(client);
+            this.deleteById(client._id);
+        });
+        return deletedClients;
+    }
+
     async hasClient(id: String){
         var found = await this.clientModel.findOne({ _id: id }) != null;
         // console.log(found);

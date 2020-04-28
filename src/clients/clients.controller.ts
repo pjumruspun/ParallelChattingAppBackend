@@ -156,8 +156,13 @@ export class ClientsController {
         // console.log(updateGroupDto);
     }
 
-    @Delete('/:id')
+    @Delete('/delete/:id')
     async delete(@Param('id') id: String): Promise<Client> {
         return this.clientsService.deleteById(id);
+    }
+
+    @Delete('/deleteall')
+    async deleteAll(): Promise<Client[]> {
+        return this.clientsService.deleteAll();
     }
 }

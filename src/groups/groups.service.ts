@@ -35,6 +35,16 @@ export class GroupsService {
         return this.groupModel.findByIdAndRemove(id);
     }
 
+    async deleteAll(): Promise<Group[]> {
+        var deletedGroups = []
+        var allGroups = await this.findAll();
+        allGroups.forEach(group => {
+            deletedGroups.push(group);
+            this.deleteById(group._id);
+        })
+        return deletedGroups;
+    }
+
     hasGroup(id: String){
         var found = this.groupModel.findOne({ _id: id }) != null;
         // console.log(found);

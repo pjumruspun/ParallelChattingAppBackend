@@ -11,5 +11,6 @@ export declare class GroupsService {
     findOne(id: String): Promise<Group>;
     update(id: String, updateGroupDto: UpdateGroupDto): Promise<Group>;
     deleteById(id: String): Promise<Group>;
+    deleteAll(): Promise<Group[]>;
     hasGroup(id: String): boolean;
 }

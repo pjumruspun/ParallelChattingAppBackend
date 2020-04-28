@@ -10,6 +10,7 @@ export declare class ClientsService {
     findOne(id: String): Promise<Client>;
     update(id: String, createClientDto: CreateClientDto): Promise<Client>;
     deleteById(id: String): Promise<Client>;
+    deleteAll(): Promise<Client[]>;
     hasClient(id: String): Promise<boolean>;
     isJoined(clientid: String, groupid: String): Promise<any>;
 }

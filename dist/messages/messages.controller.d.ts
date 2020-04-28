@@ -17,4 +17,6 @@ export declare class MessagesController {
     create(createMessageDto: CreateMessageDto): Promise<Message>;
     update(id: String, updateMessageDto: CreateMessageDto): Promise<Message>;
     getlastmessage(groupid: string): Promise<Message>;
+    delete(id: string): Promise<Message>;
+    deleteAll(): Promise<Message[]>;
 }

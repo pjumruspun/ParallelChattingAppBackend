@@ -94,6 +94,9 @@ let GroupsController = class GroupsController {
     async delete(id) {
         return this.groupsService.deleteById(id);
     }
+    async deleteAll() {
+        return this.groupsService.deleteAll();
+    }
 };
 __decorate([
     common_1.Get(),
@@ -137,12 +140,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "removemember", null);
 __decorate([
-    common_1.Delete('/:id'),
+    common_1.Delete('/delete/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], GroupsController.prototype, "delete", null);
+__decorate([
+    common_1.Delete('/deleteall'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GroupsController.prototype, "deleteAll", null);
 GroupsController = __decorate([
     swagger_1.ApiTags('Groups'),
     common_1.Controller('groups'),

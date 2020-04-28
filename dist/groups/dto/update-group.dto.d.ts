@@ -5,8 +5,4 @@ export declare class UpdateGroupDto {
         type: Types.ObjectId;
         ref: 'Client';
     }];
-    message: [{
-        type: Types.ObjectId;
-        ref: 'Message';
-    }];
 }

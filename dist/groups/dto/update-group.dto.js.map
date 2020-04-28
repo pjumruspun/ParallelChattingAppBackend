@@ -1,1 +1,1 @@
-{"version":3,"file":"update-group.dto.js","sourceRoot":"","sources":["../../../src/groups/dto/update-group.dto.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,6CAA8C;AAI9C,MAAa,cAAc;CAe1B;AAbG;IADC,qBAAW,EAAE;8BACR,MAAM;4CAAC;AAGb;IADC,qBAAW,EAAE;;8CAIX;AAGH;IADC,qBAAW,EAAE;;+CAIZ;AAdN,wCAeC"}
+{"version":3,"file":"update-group.dto.js","sourceRoot":"","sources":["../../../src/groups/dto/update-group.dto.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,6CAA8C;AAI9C,MAAa,cAAc;CAgB1B;AAdG;IADC,qBAAW,EAAE;8BACR,MAAM;4CAAC;AAGb;IADC,qBAAW,EAAE;;8CAIX;AARP,wCAgBC"}

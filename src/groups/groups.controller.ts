@@ -108,8 +108,13 @@ export class GroupsController {
         // console.log(updateGroupDto);
     }
 
-    @Delete('/:id')
+    @Delete('/delete/:id')
     async delete(@Param('id') id: String): Promise<Group> {
         return this.groupsService.deleteById(id);
+    }
+
+    @Delete('/deleteall')
+    async deleteAll(): Promise<Group[]> {
+        return this.groupsService.deleteAll();
     }
 }

@@ -46,6 +46,18 @@ let MessagesService = class MessagesService {
         });
         return messageList;
     }
+    async delete(messageid) {
+        return this.messageModel.findByIdAndDelete(messageid);
+    }
+    async deleteAll() {
+        var deletedMessages = [];
+        var allMessages = await this.findAll();
+        allMessages.forEach(message => {
+            deletedMessages.push(message);
+            this.delete(String(message._id));
+        });
+        return allMessages;
+    }
 };
 MessagesService = __decorate([
     common_1.Injectable(),

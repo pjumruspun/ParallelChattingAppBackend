@@ -10,4 +10,6 @@ export declare class MessagesService {
     hasMessage(id: String): Promise<boolean>;
     update(id: String, updateMessageDto: CreateMessageDto): Promise<Message>;
     findByGroup(groupid: string): Promise<Message[]>;
+    delete(messageid: string): Promise<Message>;
+    deleteAll(): Promise<Message[]>;
 }

@@ -42,4 +42,18 @@ export class MessagesService {
         });
         return messageList;
     }
+
+    async delete(messageid: string): Promise<Message> {
+        return this.messageModel.findByIdAndDelete(messageid);
+    }
+
+    async deleteAll(): Promise<Message[]> {
+        var deletedMessages = [];
+        var allMessages = await this.findAll();
+        allMessages.forEach(message => {
+            deletedMessages.push(message);
+            this.delete(String(message._id));
+        });
+        return allMessages;
+    }
 }

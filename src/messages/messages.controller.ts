@@ -49,7 +49,7 @@ export class MessagesController {
     async create(@Body() createMessageDto: CreateMessageDto) {
         const returnMessage = await this.messagesService.create(createMessageDto);
         if(createMessageDto.group != undefined){
-            this.groupController.addmessage(String(createMessageDto.group), returnMessage._id)
+            // this.groupController.addmessage(String(createMessageDto.group), returnMessage._id)
         }
         return returnMessage;
     }
@@ -64,5 +64,15 @@ export class MessagesController {
         var messageByGroup = await this.messagesService.findByGroup(groupid);
         var lastMessage = messageByGroup[messageByGroup.length-1];
         return lastMessage;
+    }
+
+    @Delete('/delete/:id')
+    async delete(@Param('id')id: string): Promise<Message> {
+        return this.messagesService.delete(id);
+    }
+
+    @Delete('/deleteall')
+    async deleteAll(): Promise<Message[]> {
+        return this.messagesService.deleteAll();
     }
 }

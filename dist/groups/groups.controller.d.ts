@@ -18,4 +18,5 @@ export declare class GroupsController {
     removemember(groupid: String, memberid: String): Promise<any>;
     addmessage(groupid: String, messageid: String): Promise<any>;
     delete(id: String): Promise<Group>;
+    deleteAll(): Promise<Group[]>;
 }

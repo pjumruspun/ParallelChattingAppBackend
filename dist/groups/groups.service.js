@@ -37,6 +37,15 @@ let GroupsService = class GroupsService {
     async deleteById(id) {
         return this.groupModel.findByIdAndRemove(id);
     }
+    async deleteAll() {
+        var deletedGroups = [];
+        var allGroups = await this.findAll();
+        allGroups.forEach(group => {
+            deletedGroups.push(group);
+            this.deleteById(group._id);
+        });
+        return deletedGroups;
+    }
     hasGroup(id) {
         var found = this.groupModel.findOne({ _id: id }) != null;
         return found;

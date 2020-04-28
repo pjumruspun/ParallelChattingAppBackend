@@ -140,6 +140,9 @@ let ClientsController = class ClientsController {
     async delete(id) {
         return this.clientsService.deleteById(id);
     }
+    async deleteAll() {
+        return this.clientsService.deleteAll();
+    }
 };
 __decorate([
     common_1.Get(),
@@ -204,12 +207,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "setlastmsg", null);
 __decorate([
-    common_1.Delete('/:id'),
+    common_1.Delete('/delete/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ClientsController.prototype, "delete", null);
+__decorate([
+    common_1.Delete('/deleteall'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ClientsController.prototype, "deleteAll", null);
 ClientsController = __decorate([
     swagger_1.ApiTags('Clients'),
     common_1.Controller('clients'),

@@ -16,4 +16,5 @@ export declare class ClientsController {
     setjoinstatus(memberid: String, groupid: String, bool: Boolean): Promise<any>;
     setlastmsg(memberid: String, groupid: String, messageid: String): Promise<any>;
     delete(id: String): Promise<Client>;
+    deleteAll(): Promise<Client[]>;
 }

@@ -49,7 +49,6 @@ let MessagesController = class MessagesController {
     async create(createMessageDto) {
         const returnMessage = await this.messagesService.create(createMessageDto);
         if (createMessageDto.group != undefined) {
-            this.groupController.addmessage(String(createMessageDto.group), returnMessage._id);
         }
         return returnMessage;
     }
@@ -60,6 +59,12 @@ let MessagesController = class MessagesController {
         var messageByGroup = await this.messagesService.findByGroup(groupid);
         var lastMessage = messageByGroup[messageByGroup.length - 1];
         return lastMessage;
+    }
+    async delete(id) {
+        return this.messagesService.delete(id);
+    }
+    async deleteAll() {
+        return this.messagesService.deleteAll();
     }
 };
 __decorate([
@@ -105,6 +110,19 @@ __decorate([
     __metadata("design:paramtypes", [String, create_message_dto_1.CreateMessageDto]),
     __metadata("design:returntype", Promise)
 ], MessagesController.prototype, "update", null);
+__decorate([
+    common_1.Delete('/delete/:id'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], MessagesController.prototype, "delete", null);
+__decorate([
+    common_1.Delete('/deleteall'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], MessagesController.prototype, "deleteAll", null);
 MessagesController = __decorate([
     swagger_1.ApiTags('Messages'),
     common_1.Controller('messages'),

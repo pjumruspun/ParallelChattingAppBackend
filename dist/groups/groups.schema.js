@@ -8,9 +8,5 @@ exports.GroupSchema = new mongoose.Schema({
             type: mongoose_1.Schema.Types.ObjectId,
             ref: 'Client'
         }],
-    message: [{
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: 'Message'
-        }]
 });
 //# sourceMappingURL=groups.schema.js.map
